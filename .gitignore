@@ -1,0 +1,6 @@
+# Installer & SDK Sistem
+*.deb
+*.tar.xz
+*.zip
+flutter/
+Android/
