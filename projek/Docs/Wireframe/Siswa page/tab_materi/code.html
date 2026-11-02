@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe Materi Pembelajaran (Ultra-Minimal Skeleton)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 24px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Phone frame container */
+    .phone-mockup {
+      width: 390px;
+      height: 844px;
+      background-color: #ffffff;
+      border: 1.5px solid #111111;
+      border-radius: 46px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.02);
+    }
+    /* Dynamic Island / Speaker Pill */
+    .dynamic-island {
+      width: 110px;
+      height: 28px;
+      background-color: #111111;
+      border-radius: 20px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+    }
+    /* Skeleton Pill Bars */
+    .bar-dark {
+      background-color: #8E8E8E;
+      border-radius: 9999px;
+      height: 12px;
+    }
+    .bar-light {
+      background-color: #C8C8C8;
+      border-radius: 9999px;
+      height: 10px;
+    }
+    .bar-title {
+      background-color: #8E8E8E;
+      border-radius: 9999px;
+      height: 18px;
+    }
+    /* Bottom bar indicator */
+    .home-indicator {
+      width: 134px;
+      height: 4px;
+      background-color: #111111;
+      border-radius: 9999px;
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Outer Phone Mockup (390 x 844) -->
+  <div class="phone-mockup">
+    <!-- Top Notch / Island -->
+    <div class="dynamic-island"></div>
+
+    <!-- Status Bar (Minimal geometric) -->
+    <div class="pt-3 px-7 pb-2 flex justify-between items-center w-full z-10 shrink-0">
+      <div class="w-8 h-2.5 bg-[#8E8E8E] rounded-full"></div>
+      <div class="flex items-center space-x-1.5 pt-0.5">
+        <div class="w-3.5 h-2.5 bg-[#8E8E8E] rounded-xs"></div>
+        <div class="w-3 h-2.5 bg-[#8E8E8E] rounded-full"></div>
+        <div class="w-5 h-2.5 border border-[#8E8E8E] rounded-xs flex items-center p-0.5">
+          <div class="w-2.5 h-1.5 bg-[#8E8E8E] rounded-xs"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable Screen Content -->
+    <div class="flex-1 overflow-y-auto px-4 pt-3 pb-24 flex flex-col space-y-4 scrollbar-none">
+      
+      <!-- Header: Dark Title Bar & Optional Top Action -->
+      <div class="flex items-center justify-between pt-1">
+        <div class="bar-title w-48"></div>
+        <!-- Plain geometric icon (circle) -->
+        <div class="w-7 h-7 rounded-full border border-[#C8C8C8] flex items-center justify-center">
+          <div class="w-2.5 h-2.5 rounded-full bg-[#8E8E8E]"></div>
+        </div>
+      </div>
+
+      <!-- Two-Tab Row: Left tab active (thick black underline), Right tab gray bar -->
+      <div class="w-full flex border-b border-[#E5E7EB] pt-1">
+        <!-- Tab 1 (Materials / Active) -->
+        <div class="flex-1 flex flex-col items-center pb-2.5 relative">
+          <div class="w-20 h-3 bg-[#111111] rounded-full"></div>
+          <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] rounded-full"></div>
+        </div>
+        <!-- Tab 2 (Assignments / Inactive) -->
+        <div class="flex-1 flex flex-col items-center pb-2.5">
+          <div class="w-20 h-3 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Row of Four Pill Chips (First solid black, rest outlined) -->
+      <div class="flex items-center space-x-2 pt-1 overflow-x-hidden">
+        <!-- Chip 1 (Active) -->
+        <div class="flex-1 h-8 rounded-full bg-[#111111] flex items-center justify-center px-2">
+          <div class="w-10 h-2 bg-white rounded-full"></div>
+        </div>
+        <!-- Chip 2 -->
+        <div class="flex-1 h-8 rounded-full border border-[#D1D5DB] bg-white flex items-center justify-center px-2">
+          <div class="w-10 h-2 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+        <!-- Chip 3 -->
+        <div class="flex-1 h-8 rounded-full border border-[#D1D5DB] bg-white flex items-center justify-center px-2">
+          <div class="w-10 h-2 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+        <!-- Chip 4 -->
+        <div class="flex-1 h-8 rounded-full border border-[#D1D5DB] bg-white flex items-center justify-center px-2">
+          <div class="w-10 h-2 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Five List Cards -->
+      <div class="flex flex-col space-y-3 pt-1">
+
+        <!-- Card 1 -->
+        <div class="w-full bg-white border border-[#E5E7EB] rounded-xl p-3 flex items-center space-x-3.5 shadow-none">
+          <!-- Rounded square at the left (file placeholder) -->
+          <div class="w-12 h-12 rounded-lg bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center shrink-0">
+            <div class="w-5 h-6 rounded-xs border border-[#8E8E8E] flex flex-col p-1 space-y-1 justify-center">
+              <div class="w-3 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+              <div class="w-2 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+          </div>
+          <!-- Middle & date below -->
+          <div class="flex-1 flex flex-col space-y-1.5">
+            <!-- Two stacked bars (subject/title, chapter/author) -->
+            <div class="bar-dark w-44"></div>
+            <div class="bar-light w-32"></div>
+            <!-- Small light bar below (date) -->
+            <div class="bar-light w-16 !h-[7px] mt-0.5 opacity-90"></div>
+          </div>
+          <!-- Chevron right (plain geometric) -->
+          <div class="w-4 h-4 flex items-center justify-center shrink-0">
+            <div class="w-2 h-2 border-t-2 border-r-2 border-[#C8C8C8] transform rotate-45"></div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="w-full bg-white border border-[#E5E7EB] rounded-xl p-3 flex items-center space-x-3.5 shadow-none">
+          <div class="w-12 h-12 rounded-lg bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center shrink-0">
+            <div class="w-5 h-6 rounded-xs border border-[#8E8E8E] flex flex-col p-1 space-y-1 justify-center">
+              <div class="w-3 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+              <div class="w-2 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col space-y-1.5">
+            <div class="bar-dark w-48"></div>
+            <div class="bar-light w-28"></div>
+            <div class="bar-light w-14 !h-[7px] mt-0.5 opacity-90"></div>
+          </div>
+          <div class="w-4 h-4 flex items-center justify-center shrink-0">
+            <div class="w-2 h-2 border-t-2 border-r-2 border-[#C8C8C8] transform rotate-45"></div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="w-full bg-white border border-[#E5E7EB] rounded-xl p-3 flex items-center space-x-3.5 shadow-none">
+          <div class="w-12 h-12 rounded-lg bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center shrink-0">
+            <div class="w-5 h-6 rounded-xs border border-[#8E8E8E] flex flex-col p-1 space-y-1 justify-center">
+              <div class="w-3 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+              <div class="w-2 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col space-y-1.5">
+            <div class="bar-dark w-40"></div>
+            <div class="bar-light w-36"></div>
+            <div class="bar-light w-16 !h-[7px] mt-0.5 opacity-90"></div>
+          </div>
+          <div class="w-4 h-4 flex items-center justify-center shrink-0">
+            <div class="w-2 h-2 border-t-2 border-r-2 border-[#C8C8C8] transform rotate-45"></div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="w-full bg-white border border-[#E5E7EB] rounded-xl p-3 flex items-center space-x-3.5 shadow-none">
+          <div class="w-12 h-12 rounded-lg bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center shrink-0">
+            <div class="w-5 h-6 rounded-xs border border-[#8E8E8E] flex flex-col p-1 space-y-1 justify-center">
+              <div class="w-3 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+              <div class="w-2 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col space-y-1.5">
+            <div class="bar-dark w-52"></div>
+            <div class="bar-light w-32"></div>
+            <div class="bar-light w-14 !h-[7px] mt-0.5 opacity-90"></div>
+          </div>
+          <div class="w-4 h-4 flex items-center justify-center shrink-0">
+            <div class="w-2 h-2 border-t-2 border-r-2 border-[#C8C8C8] transform rotate-45"></div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="w-full bg-white border border-[#E5E7EB] rounded-xl p-3 flex items-center space-x-3.5 shadow-none">
+          <div class="w-12 h-12 rounded-lg bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center shrink-0">
+            <div class="w-5 h-6 rounded-xs border border-[#8E8E8E] flex flex-col p-1 space-y-1 justify-center">
+              <div class="w-3 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+              <div class="w-2 h-0.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col space-y-1.5">
+            <div class="bar-dark w-36"></div>
+            <div class="bar-light w-24"></div>
+            <div class="bar-light w-16 !h-[7px] mt-0.5 opacity-90"></div>
+          </div>
+          <div class="w-4 h-4 flex items-center justify-center shrink-0">
+            <div class="w-2 h-2 border-t-2 border-r-2 border-[#C8C8C8] transform rotate-45"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Navigation Bar (Fixed at bottom inside phone) -->
+    <!-- 5 evenly spaced items: circle above short bar. 3rd black (active learning tab), rest light gray -->
+    <div class="absolute bottom-0 left-0 right-0 h-[68px] bg-white border-t border-[#E5E7EB] px-3 pb-4 flex items-center justify-between z-40">
+      
+      <!-- Nav Item 1 (Home - Inactive) -->
+      <div class="flex-1 flex flex-col items-center justify-center space-y-1">
+        <div class="w-3.5 h-3.5 rounded-full border border-[#C8C8C8] bg-transparent"></div>
+        <div class="w-4 h-1 bg-[#C8C8C8] rounded-full"></div>
+      </div>
+
+      <!-- Nav Item 2 (Schedule - Inactive) -->
+      <div class="flex-1 flex flex-col items-center justify-center space-y-1">
+        <div class="w-3.5 h-3.5 rounded-full border border-[#C8C8C8] bg-transparent"></div>
+        <div class="w-4 h-1 bg-[#C8C8C8] rounded-full"></div>
+      </div>
+
+      <!-- Nav Item 3 (Learning / Materials - ACTIVE - Black) -->
+      <div class="flex-1 flex flex-col items-center justify-center space-y-1">
+        <div class="w-3.5 h-3.5 rounded-full bg-[#111111]"></div>
+        <div class="w-5 h-1.5 bg-[#111111] rounded-full"></div>
+      </div>
+
+      <!-- Nav Item 4 (Grades / Tasks - Inactive) -->
+      <div class="flex-1 flex flex-col items-center justify-center space-y-1">
+        <div class="w-3.5 h-3.5 rounded-full border border-[#C8C8C8] bg-transparent"></div>
+        <div class="w-4 h-1 bg-[#C8C8C8] rounded-full"></div>
+      </div>
+
+      <!-- Nav Item 5 (Profile - Inactive) -->
+      <div class="flex-1 flex flex-col items-center justify-center space-y-1">
+        <div class="w-3.5 h-3.5 rounded-full border border-[#C8C8C8] bg-transparent"></div>
+        <div class="w-4 h-1 bg-[#C8C8C8] rounded-full"></div>
+      </div>
+
+    </div>
+
+    <!-- Home Indicator -->
+    <div class="home-indicator z-50"></div>
+
+  </div>
+
+</body>
+</html>

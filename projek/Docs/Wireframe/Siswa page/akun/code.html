@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe Akun Siswa (Ultra-Minimal Skeleton)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    /* Phone frame 390x844 */
+    .phone-mockup {
+      width: 390px;
+      height: 844px;
+      background-color: #ffffff;
+      border: 2px solid #111111;
+      border-radius: 44px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+    /* Hide scrollbar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Phone Container -->
+  <div class="phone-mockup shadow-none">
+    
+    <!-- Top System / Status Bar & Notch -->
+    <div class="w-full pt-3 px-7 flex justify-between items-center z-20 shrink-0">
+      <!-- Time pill -->
+      <div class="w-10 h-3 bg-[#8E8E8E] rounded-full"></div>
+      <!-- Dynamic Island / Speaker cutout -->
+      <div class="w-24 h-4 bg-[#111111] rounded-full mx-auto"></div>
+      <!-- Battery / Signal / Wifi pill cluster -->
+      <div class="flex items-center space-x-1.5">
+        <div class="w-3.5 h-2.5 bg-[#8E8E8E] rounded-sm"></div>
+        <div class="w-2.5 h-2.5 bg-[#8E8E8E] rounded-full"></div>
+        <div class="w-4 h-2.5 border border-[#8E8E8E] rounded-sm p-[1px] flex items-center">
+          <div class="w-full h-full bg-[#8E8E8E] rounded-[1px]"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Top Bar (Minimal Header) -->
+    <div class="px-5 pt-3 pb-2 flex items-center justify-between shrink-0">
+      <!-- Header dark title pill -->
+      <div class="w-28 h-5 bg-[#8E8E8E] rounded-full"></div>
+      <!-- Top right settings/option icon placeholder -->
+      <div class="w-7 h-7 rounded-full border border-[#D1D5DB] flex items-center justify-center">
+        <div class="w-2 h-2 rounded-full bg-[#8E8E8E]"></div>
+      </div>
+    </div>
+
+    <!-- Main Scrollable Screen Content -->
+    <div class="flex-1 overflow-y-auto no-scrollbar px-4 pt-2 pb-4 flex flex-col justify-between">
+      
+      <!-- Upper Section: Avatar & User Info & Menu List -->
+      <div class="flex flex-col">
+        <!-- Avatar & User Info Centered Block -->
+        <div class="flex flex-col items-center justify-center pt-2 pb-6">
+          <!-- Large Circle Avatar centered -->
+          <div class="w-20 h-20 rounded-full bg-[#E5E7EB] border border-[#D1D5DB] flex items-center justify-center mb-3">
+            <div class="w-9 h-9 rounded-full bg-[#D1D5DB]"></div>
+          </div>
+          <!-- Dark Bar (User Name) -->
+          <div class="w-36 h-4 bg-[#8E8E8E] rounded-full mb-2"></div>
+          <!-- Light Bar (User ID / Class / NIS) -->
+          <div class="w-24 h-3 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+
+        <!-- Four Menu Rows Separated by Thin Lines in an Outlined Container -->
+        <div class="w-full border border-[#E5E7EB] rounded-2xl overflow-hidden bg-white">
+          
+          <!-- Menu Row 1 -->
+          <div class="flex items-center justify-between px-4 py-3.5 border-b border-[#E5E7EB]">
+            <div class="flex items-center space-x-3">
+              <!-- Small circle icon at left -->
+              <div class="w-8 h-8 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#8E8E8E]"></div>
+              </div>
+              <!-- Gray bar label -->
+              <div class="w-28 h-3.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+            <!-- Chevron at right -->
+            <svg class="w-4 h-4 text-[#8E8E8E]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+
+          <!-- Menu Row 2 -->
+          <div class="flex items-center justify-between px-4 py-3.5 border-b border-[#E5E7EB]">
+            <div class="flex items-center space-x-3">
+              <!-- Small circle icon at left -->
+              <div class="w-8 h-8 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#8E8E8E]"></div>
+              </div>
+              <!-- Gray bar label -->
+              <div class="w-36 h-3.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+            <!-- Chevron at right -->
+            <svg class="w-4 h-4 text-[#8E8E8E]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+
+          <!-- Menu Row 3 -->
+          <div class="flex items-center justify-between px-4 py-3.5 border-b border-[#E5E7EB]">
+            <div class="flex items-center space-x-3">
+              <!-- Small circle icon at left -->
+              <div class="w-8 h-8 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#8E8E8E]"></div>
+              </div>
+              <!-- Gray bar label -->
+              <div class="w-24 h-3.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+            <!-- Chevron at right -->
+            <svg class="w-4 h-4 text-[#8E8E8E]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+
+          <!-- Menu Row 4 -->
+          <div class="flex items-center justify-between px-4 py-3.5">
+            <div class="flex items-center space-x-3">
+              <!-- Small circle icon at left -->
+              <div class="w-8 h-8 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#8E8E8E]"></div>
+              </div>
+              <!-- Gray bar label -->
+              <div class="w-32 h-3.5 bg-[#8E8E8E] rounded-full"></div>
+            </div>
+            <!-- Chevron at right -->
+            <svg class="w-4 h-4 text-[#8E8E8E]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Lower Section: Full-width secondary outlined button (Logout) & App Version note -->
+      <div class="mt-6 mb-2">
+        <!-- Secondary Button: white rounded rectangle with thin dark outline and one short gray bar inside (48-52px tall) -->
+        <div class="w-full h-12 bg-white border border-[#111111] rounded-xl flex items-center justify-center mb-4">
+          <div class="w-24 h-3 bg-[#8E8E8E] rounded-full"></div>
+        </div>
+
+        <!-- Optional subtle version info skeleton pill centered -->
+        <div class="w-16 h-2 bg-[#E5E7EB] rounded-full mx-auto"></div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Navigation Bar: 5 evenly spaced items (circle above short bar), 5th black, rest light gray -->
+    <div class="w-full bg-white border-t border-[#E5E7EB] px-4 pt-2.5 pb-2 shrink-0 z-20">
+      <div class="flex justify-between items-center">
+        
+        <!-- Tab 1: Inactive (Home) -->
+        <div class="flex flex-col items-center justify-center w-12 py-1">
+          <div class="w-4 h-4 rounded-full bg-[#C8C8C8] mb-1.5"></div>
+          <div class="w-7 h-1.5 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+
+        <!-- Tab 2: Inactive (Schedule) -->
+        <div class="flex flex-col items-center justify-center w-12 py-1">
+          <div class="w-4 h-4 rounded-full bg-[#C8C8C8] mb-1.5"></div>
+          <div class="w-7 h-1.5 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+
+        <!-- Tab 3: Inactive (Learning) -->
+        <div class="flex flex-col items-center justify-center w-12 py-1">
+          <div class="w-4 h-4 rounded-full bg-[#C8C8C8] mb-1.5"></div>
+          <div class="w-7 h-1.5 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+
+        <!-- Tab 4: Inactive (Grades) -->
+        <div class="flex flex-col items-center justify-center w-12 py-1">
+          <div class="w-4 h-4 rounded-full bg-[#C8C8C8] mb-1.5"></div>
+          <div class="w-7 h-1.5 bg-[#C8C8C8] rounded-full"></div>
+        </div>
+
+        <!-- Tab 5: ACTIVE (Account / Profile - Solid Black) -->
+        <div class="flex flex-col items-center justify-center w-12 py-1">
+          <div class="w-4 h-4 rounded-full bg-[#111111] mb-1.5"></div>
+          <div class="w-7 h-1.5 bg-[#111111] rounded-full"></div>
+          <!-- Active underline indicator indicator dot or line -->
+          <div class="w-4 h-0.5 bg-[#111111] rounded-full mt-1"></div>
+        </div>
+
+      </div>
+
+      <!-- Home Indicator Line -->
+      <div class="w-32 h-1 bg-[#111111] rounded-full mx-auto mt-2 mb-0.5 opacity-80"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>

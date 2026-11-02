@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>ScholaNexa - Masuk ke Akun</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#113F67',
+              steel: '#34699A',
+              sky: '#58A0C8',
+              yellow: '#FDF5AA',
+              bg: '#F7F9FC',
+              textPrimary: '#1C2935',
+              textSecondary: '#64717D',
+              border: '#DCE3E8',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      background-color: #ECEEF2;
+      font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      user-select: none;
+    }
+    /* Smooth focus transition matching Flutter Material 3 */
+    .m3-input {
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+    }
+    .m3-input:focus {
+      border-color: #58A0C8 !important;
+      box-shadow: 0 0 0 3px rgba(88, 160, 200, 0.2) !important;
+      outline: none;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-0 sm:p-4 select-none">
+<!-- BEGIN: PhoneContainer -->
+<!-- Mimics mobile iOS 390x844 viewport aspect ratio -->
+<main class="w-[390px] h-[844px] min-h-[844px] bg-[#F8F9FA] text-[#17212B] flex flex-col justify-between relative shadow-2xl rounded-[48px] overflow-hidden border-[8px] border-[#17212B]">
+<!-- BEGIN: iOSStatusBar -->
+<header class="w-full h-11 px-6 flex items-center justify-between z-20 shrink-0 relative"><span class="text-[14px] font-semibold tracking-tight text-[#17212B]">09:41</span><div class="absolute left-1/2 -translate-x-1/2 top-2 w-28 h-7 bg-black rounded-full flex items-center justify-end pr-2.5"><div class="w-2.5 h-2.5 rounded-full bg-[#111c24]/90 border border-slate-700/40"></div></div><div class="flex items-center space-x-1.5 text-[#17212B]"><svg class="w-4 h-3.5 fill-current" viewBox="0 0 17 12"><rect height="4" rx="0.5" width="2.5" x="0" y="8"></rect><rect height="6.5" rx="0.5" width="2.5" x="4" y="5.5"></rect><rect height="9" rx="0.5" width="2.5" x="8" y="3"></rect><rect height="12" rx="0.5" width="2.5" x="12" y="0"></rect></svg><svg class="w-4 h-3.5 fill-current" viewBox="0 0 16 12"><path d="M8 2.5C5.1 2.5 2.5 3.7 0.7 5.6L0 4.8C2 2.8 4.9 1.5 8 1.5C11.1 1.5 14 2.8 16 4.8L15.3 5.6C13.5 3.7 10.9 2.5 8 2.5ZM8 5.8C6.1 5.8 4.3 6.6 3 8L2.2 7.2C3.7 5.6 5.8 4.7 8 4.7C10.2 4.7 12.3 5.6 13.8 7.2L13 8C11.7 6.6 9.9 5.8 8 5.8ZM8 9.2C7 9.2 6.1 9.6 5.4 10.3L8 13L10.6 10.3C9.9 9.6 9 9.2 8 9.2Z"></path></svg><div class="w-5 h-2.5 border border-[#17212B] rounded-[3px] p-0.5 flex items-center"><div class="w-full h-full bg-[#17212B] rounded-[1px]"></div></div></div></header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: FormContentSection -->
+<div class="flex-1 flex flex-col justify-center px-7 py-2 overflow-y-auto">
+<!-- Logo / Brand Emblem (Matches central rounded square on wireframe) -->
+<div class="flex justify-center mb-6">
+<div class="w-20 h-20 rounded-2xl bg-white border border-[#E5E7EB] shadow-sm flex items-center justify-center p-3 relative group">
+<!-- Soft glow tint behind icon using peach/mint accents -->
+<div class="absolute inset-2 bg-[#FFCA88]/20 rounded-xl"></div>
+<!-- Geometric EdTech Logo Emblem for ScholaNexa with new palette -->
+<svg class="w-10 h-10 relative z-10" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#DE7272" height="16" rx="4" width="16" x="6" y="6"></rect>
+<rect fill="#FFCA88" height="16" rx="4" width="16" x="26" y="6"></rect>
+<rect fill="#B4E4D6" height="16" rx="4" width="16" x="6" y="26"></rect>
+<circle cx="34" cy="34" fill="#17212B" r="8"></circle>
+<path d="M31 34L33.5 36.5L37 32" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Title & Subtitle Headers -->
+<div class="text-center mb-8">
+<h1 class="text-2xl font-bold text-[#17212B] tracking-tight mb-2">
+          Masuk ke Akun
+        </h1>
+<p class="text-[13px] leading-relaxed text-[#64717D] max-w-[270px] mx-auto">
+          Silakan masukkan nomor telepon atau email dan kata sandi Anda
+        </p>
+</div>
+<!-- Login Form Elements -->
+<form class="space-y-4" onsubmit="event.preventDefault()">
+<!-- Input 1: Email / Phone -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-[#17212B]" for="identifier">
+            Email atau Nomor Telepon
+          </label>
+<div class="relative">
+<input class="m3-input w-full h-12 px-4 rounded-xl bg-white border border-[#E5E7EB] text-sm text-[#17212B] placeholder:text-[#64717D]/60 shadow-sm transition" id="identifier" name="identifier" placeholder="nama@email.com" type="text">
+</div>
+</div>
+<!-- Input 2: Password -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-[#17212B]" for="password">
+            Kata Sandi
+          </label>
+<div class="relative flex items-center">
+<input class="m3-input w-full h-12 pl-4 pr-11 rounded-xl bg-white border border-[#E5E7EB] text-sm text-[#17212B] placeholder:text-[#64717D]/60 shadow-sm transition" id="password" name="password" placeholder="Masukkan kata sandi" type="password">
+<!-- Visibility Toggle Icon Button -->
+<button aria-label="Tampilkan atau sembunyikan kata sandi" class="absolute right-3 p-1.5 text-[#64717D] hover:text-[#17212B] focus:outline-none transition flex items-center justify-center" id="togglePassword" type="button">
+<span class="material-symbols-outlined text-[20px]" id="eyeIcon">
+                visibility
+              </span>
+</button>
+</div>
+</div>
+<!-- Forgot Password Link -->
+<div class="flex justify-end pt-0.5">
+<a class="text-xs font-semibold text-[#DE7272] hover:text-[#c45f5f] hover:underline transition" href="#">
+            Lupa Kata Sandi?
+          </a>
+</div>
+<!-- Primary Action Button -->
+<div class="pt-3">
+<button class="w-full h-12 bg-[#DE7272] hover:bg-[#d46565] active:scale-[0.99] text-[#17212B] font-bold rounded-xl text-sm shadow-md transition-all flex items-center justify-center tracking-wide" type="submit">
+            Masuk
+          </button>
+</div>
+</form>
+<!-- Registration Callout Link -->
+<div class="mt-6 text-center text-xs text-[#64717D]">
+        Belum punya akun? 
+        <a class="font-semibold text-[#DE7272] hover:text-[#c45f5f] hover:underline transition ml-1" href="#">
+          Daftar sekarang
+        </a>
+</div>
+</div>
+<!-- END: FormContentSection -->
+<!-- BEGIN: iOSHomeIndicator -->
+<footer class="w-full pb-2.5 pt-1 flex justify-center shrink-0"><div class="w-32 h-1 bg-[#17212B]/40 rounded-full"></div></footer>
+<!-- END: iOSHomeIndicator -->
+</main>
+<!-- END: PhoneContainer -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="password-toggle">
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eyeIcon');
+
+    if (togglePassword && passwordInput && eyeIcon) {
+      togglePassword.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    }
+  </script>
+<!-- END: InteractiveScripts -->
+
+
+</body></html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScholaNexa - Riwayat Pembayaran</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              coral: '#FF7F50',
+              navy: '#172033',
+              dark: '#191C1F',
+              muted: '#626B78',
+              surface: '#FFFFFF',
+              background: '#F7F9FC',
+              border: '#E5E9F0',
+              mint: '#06D6A0',
+              mintBg: '#E6FBF5',
+              mintText: '#047857'
+            }
+          },
+          boxShadow: {
+            'card-subtle': '0 2px 8px -2px rgba(23, 32, 51, 0.04), 0 1px 4px -1px rgba(23, 32, 51, 0.02)',
+            'nav-bar': '0 -4px 16px -2px rgba(23, 32, 51, 0.04)'
+          }
+        }
+      }
+    };
+  </script>
+<style data-purpose="base-styling">
+    body {
+      background-color: #ECEFF4;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 24px 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style data-purpose="device-chassis">
+    /* Portrait Viewport Mockup Chassis (390x844) */
+    .mobile-frame {
+      width: 390px;
+      height: 844px;
+      border: 8px solid #172033;
+      border-radius: 50px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(23, 32, 51, 0.35);
+      background-color: #F7F9FC;
+    }
+  </style>
+</head>
+<body>
+<!-- BEGIN: PhoneChassis -->
+<div class="mobile-frame flex flex-col justify-between selection:bg-brand-coral/20">
+<!-- BEGIN: StatusBarAndDynamicIsland -->
+<header class="relative z-30 pt-3 px-7 flex items-center justify-between text-brand-navy select-none bg-transparent" data-purpose="status-bar">
+<!-- Clock Time -->
+<span class="text-[14px] font-semibold tracking-tight">09:41</span>
+<!-- Dynamic Island Pill -->
+<div class="absolute left-1/2 -translate-x-1/2 top-3 w-[116px] h-[30px] bg-brand-navy rounded-full flex items-center justify-end pr-3">
+<!-- Lens Spec Dot -->
+<div class="w-2.5 h-2.5 rounded-full bg-[#1F2B45] border border-black/40"></div>
+</div>
+<!-- System Icons (Signal, Wifi, Battery) -->
+<div class="flex items-center space-x-1.5 text-brand-navy">
+<!-- Cellular Signal Icon -->
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z" opacity="0"></path>
+<rect height="5" rx="0.75" width="3" x="2" y="16"></rect>
+<rect height="9" rx="0.75" width="3" x="7" y="12"></rect>
+<rect height="13" rx="0.75" width="3" x="12" y="8"></rect>
+<rect height="17" rx="0.75" width="3" x="17" y="4"></rect>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 4c-5 0-9.27 2.11-12 5.46L12 21l12-11.54C21.27 6.11 17 4 12 4zm0 3c3.78 0 7.07 1.54 9.38 3.99L12 18.25 2.62 10.99C4.93 8.54 8.22 7 12 7z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-5 h-2.5 rounded-[4px] border border-brand-navy p-[1px] flex items-center">
+<div class="w-full h-full bg-brand-navy rounded-[2px]"></div>
+</div>
+</div>
+</header>
+<!-- END: StatusBarAndDynamicIsland -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 flex flex-col overflow-y-auto px-5 pt-3 pb-2 select-none" data-purpose="content-viewport">
+<!-- BEGIN: TopAppBar -->
+<section class="flex items-center justify-between mt-1 mb-5" data-purpose="top-app-bar">
+<div>
+<h1 class="text-[26px] font-bold text-brand-navy tracking-tight leading-none">Pembayaran</h1>
+</div>
+<!-- Filter / Receipt Action Button -->
+<button aria-label="Filter Riwayat" class="w-10 h-10 rounded-full bg-brand-surface border border-brand-border flex items-center justify-center text-brand-navy shadow-sm active:scale-95 transition-transform hover:bg-slate-50" type="button">
+<svg class="w-5 h-5 text-brand-navy" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="4" x2="20" y1="6" y2="6"></line>
+<line x1="8" x2="16" y1="12" y2="12"></line>
+<line x1="10" x2="14" y1="18" y2="18"></line>
+</svg>
+</button>
+</section>
+<!-- END: TopAppBar -->
+<!-- BEGIN: HorizontalTabs -->
+<nav class="grid grid-cols-2 border-b border-brand-border mb-4" data-purpose="payment-tabs">
+<!-- Tab 1: Tagihan (Inactive) -->
+<button class="py-2.5 text-center font-medium text-[15px] text-brand-muted hover:text-brand-navy transition-colors" type="button">
+          Tagihan
+        </button>
+<!-- Tab 2: Riwayat (Active) -->
+<button class="relative py-2.5 text-center font-bold text-[15px] text-brand-coral" type="button">
+          Riwayat
+          <!-- Active Indicator Bar -->
+<div class="absolute bottom-0 left-0 right-0 h-[2.5px] bg-brand-coral rounded-t-full"></div>
+</button>
+</nav>
+<!-- END: HorizontalTabs -->
+<!-- BEGIN: TransactionHistoryList -->
+<!-- Matches exact 4 card layout specified in wireframe -->
+<section class="flex flex-col space-y-3 pt-1" data-purpose="history-list">
+<!-- Card 1: SPP Oktober 2026 -->
+<article class="bg-brand-surface border border-brand-border rounded-2xl p-4 shadow-card-subtle flex items-start justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-[15px] font-semibold text-brand-navy leading-snug">SPP Oktober 2026</h2>
+<div class="flex items-center text-brand-muted text-[12px] mt-1 space-x-1">
+<span>Virtual Account BCA</span>
+<span>•</span>
+<span>Dibayar 8 Okt 2026</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="text-[15px] font-bold text-brand-navy">Rp450.000</span>
+<span class="mt-1.5 inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-brand-mintBg text-brand-mintText">
+<svg class="w-3 h-3 text-brand-mint stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span>Lunas</span>
+</span>
+</div>
+</article>
+<!-- Card 2: SPP September 2026 -->
+<article class="bg-brand-surface border border-brand-border rounded-2xl p-4 shadow-card-subtle flex items-start justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-[15px] font-semibold text-brand-navy leading-snug">SPP September 2026</h2>
+<div class="flex items-center text-brand-muted text-[12px] mt-1 space-x-1">
+<span>QRIS</span>
+<span>•</span>
+<span>Dibayar 9 Sep 2026</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="text-[15px] font-bold text-brand-navy">Rp450.000</span>
+<span class="mt-1.5 inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-brand-mintBg text-brand-mintText">
+<svg class="w-3 h-3 text-brand-mint stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span>Lunas</span>
+</span>
+</div>
+</article>
+<!-- Card 3: Buku Paket Semester Ganjil -->
+<article class="bg-brand-surface border border-brand-border rounded-2xl p-4 shadow-card-subtle flex items-start justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-[15px] font-semibold text-brand-navy leading-snug">Buku Paket Semester Ganjil</h2>
+<div class="flex items-center text-brand-muted text-[12px] mt-1 space-x-1">
+<span>Virtual Account Mandiri</span>
+<span>•</span>
+<span>Dibayar 15 Agu 2026</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="text-[15px] font-bold text-brand-navy">Rp780.000</span>
+<span class="mt-1.5 inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-brand-mintBg text-brand-mintText">
+<svg class="w-3 h-3 text-brand-mint stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span>Lunas</span>
+</span>
+</div>
+</article>
+<!-- Card 4: Seragam Batik -->
+<article class="bg-brand-surface border border-brand-border rounded-2xl p-4 shadow-card-subtle flex items-start justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-[15px] font-semibold text-brand-navy leading-snug">Seragam Batik</h2>
+<div class="flex items-center text-brand-muted text-[12px] mt-1 space-x-1">
+<span>E-Wallet</span>
+<span>•</span>
+<span>Dibayar 12 Agu 2026</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="text-[15px] font-bold text-brand-navy">Rp200.000</span>
+<span class="mt-1.5 inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-brand-mintBg text-brand-mintText">
+<svg class="w-3 h-3 text-brand-mint stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span>Lunas</span>
+</span>
+</div>
+</article>
+</section>
+<!-- END: TransactionHistoryList -->
+</main>
+<!-- END: MainContentArea -->
+<!-- BEGIN: BottomNavigationContainer -->
+<footer class="bg-brand-surface border-t border-brand-border shrink-0 select-none shadow-nav-bar" data-purpose="bottom-navigation">
+<!-- 4 Navigation Action Buttons -->
+<nav class="grid grid-cols-4 px-3 pt-2.5 pb-1">
+<!-- Nav Item 1: Beranda -->
+<button class="flex flex-col items-center justify-center text-brand-muted hover:text-brand-navy transition-colors py-1" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="text-[10px] font-medium mt-1">Beranda</span>
+</button>
+<!-- Nav Item 2: Anak -->
+<button class="flex flex-col items-center justify-center text-brand-muted hover:text-brand-navy transition-colors py-1" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="7" r="4"></circle>
+<path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path>
+</svg>
+<span class="text-[10px] font-medium mt-1">Anak</span>
+</button>
+<!-- Nav Item 3: Pembayaran (ACTIVE) -->
+<button class="flex flex-col items-center justify-center text-brand-coral py-1 relative" type="button">
+<!-- Active Icon Highlight -->
+<svg class="w-6 h-6 fill-brand-coral stroke-brand-coral" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke-width="2"></path>
+<path d="M8 8h8M8 12h8M8 16h4" stroke="currentColor" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-bold mt-1 text-brand-coral">Pembayaran</span>
+<!-- Active dot indicator -->
+<div class="w-1 h-1 bg-brand-coral rounded-full mt-0.5"></div>
+</button>
+<!-- Nav Item 4: Akun -->
+<button class="flex flex-col items-center justify-center text-brand-muted hover:text-brand-navy transition-colors py-1" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+<span class="text-[10px] font-medium mt-1">Akun</span>
+</button>
+</nav>
+<!-- Home Indicator Safe Area Pill -->
+<div class="w-full flex justify-center pb-2 pt-1" data-purpose="home-indicator">
+<div class="w-32 h-1 bg-slate-900/30 rounded-full"></div>
+</div>
+</footer>
+<!-- END: BottomNavigationContainer -->
+</div>
+<!-- END: PhoneChassis -->
+</body></html>

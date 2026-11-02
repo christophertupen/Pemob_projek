@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portal Orang Tua - SIAKAD</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF7F50',
+            secondary: '#FFD166',
+            success: '#06D6A0',
+            info: '#118AB2',
+            surface: '#FFFFFF',
+            canvas: '#F7F9FC',
+            appText: '#191C1F',
+            appMuted: '#626B78',
+            appBorder: '#E5E9F0',
+            phoneBorder: '#172033',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll-and-icons">
+    /* Hide scrollbars for clean mobile presentation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 min-h-screen flex items-center justify-center p-2 sm:p-6 antialiased font-sans">
+<!-- BEGIN: PhoneFrame -->
+<!-- Simulated iPhone Chassis (390px x 844px) matching design specs -->
+<div class="relative w-[390px] h-[844px] bg-canvas rounded-[44px] border-[10px] border-phoneBorder shadow-2xl overflow-hidden flex flex-col select-none" data-purpose="phone-frame">
+<!-- BEGIN: StatusBar -->
+<header class="w-full bg-surface pt-3 px-7 pb-2 flex justify-between items-center z-30 shrink-0 select-none" data-purpose="status-bar">
+<!-- Left side: Digital Clock -->
+<span class="text-[14px] font-semibold tracking-tight text-appText">09:41</span>
+<!-- Center: Dynamic Island / Camera Pill -->
+<div class="absolute left-1/2 -translate-x-1/2 top-2.5 w-24 h-5 bg-black rounded-full" data-purpose="dynamic-island"></div>
+<!-- Right side: Status icons (Signal, WiFi, Battery) -->
+<div class="flex items-center space-x-1.5 text-appText">
+<span class="material-symbols-outlined text-[15px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]">wifi</span>
+<span class="material-symbols-outlined text-[17px]">battery_full</span>
+</div>
+</header>
+<!-- END: StatusBar -->
+<!-- BEGIN: TopHeader -->
+<!-- Child Identity & Child Switcher -->
+<section class="bg-surface px-5 pt-3 pb-3 border-b border-appBorder shrink-0" data-purpose="child-header">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<!-- Student Avatar -->
+<div class="w-11 h-11 rounded-full bg-orange-100 border-2 border-primary/30 flex items-center justify-center text-primary font-bold text-base shadow-sm">
+            RP
+          </div>
+<div>
+<h1 class="font-bold text-appText text-base leading-tight tracking-tight">Rizky Andika Putra</h1>
+<p class="text-xs text-appMuted mt-0.5">Kelas X IPA 1 • SMA Negeri 1</p>
+</div>
+</div>
+<!-- Switch Student Button -->
+<button aria-label="Ganti data anak" class="flex items-center space-x-1 py-1.5 px-3 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors text-appMuted text-xs font-semibold border border-appBorder" type="button">
+<span class="material-symbols-outlined text-sm text-primary">sync_alt</span>
+<span class="text-[11px] font-medium text-appText">Ganti</span>
+</button>
+</div>
+<!-- Segmented Navigation Tabs directly under header -->
+<nav aria-label="Tab Kategori" class="flex items-center mt-3 border-b border-appBorder/80 pt-1">
+<button class="relative pb-2.5 px-4 text-xs font-bold text-primary flex items-center space-x-1.5 focus:outline-none">
+<span>Nilai</span>
+<!-- Active Tab Underline Indicator -->
+<span class="absolute bottom-0 left-0 right-0 h-[2.5px] bg-primary rounded-t-full"></span>
+</button>
+<button class="relative pb-2.5 px-4 text-xs font-medium text-appMuted hover:text-appText transition-colors">
+<span>Absensi</span>
+</button>
+<button class="relative pb-2.5 px-4 text-xs font-medium text-appMuted hover:text-appText transition-colors">
+<span>Jadwal</span>
+</button>
+</nav>
+</section>
+<!-- END: TopHeader -->
+<!-- BEGIN: ScrollableContent -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-4 py-3 space-y-3" data-purpose="scrollable-body">
+<!-- BEGIN: SemesterSelector -->
+<div class="flex items-center justify-between bg-surface border border-appBorder rounded-xl px-3.5 py-2.5 shadow-xs" data-purpose="semester-picker">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-lg">calendar_today</span>
+<div class="flex flex-col">
+<span class="text-[10px] text-appMuted uppercase tracking-wider font-semibold">Tahun Akademik</span>
+<span class="text-xs font-bold text-appText">Semester Ganjil 2026/2027</span>
+</div>
+</div>
+<button aria-label="Pilih Semester" class="p-1 rounded-md text-appMuted hover:bg-slate-50" type="button">
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+<!-- END: SemesterSelector -->
+<!-- BEGIN: SummaryStats -->
+<!-- 4 Summary Metric Cards following the wireframe layout -->
+<section aria-label="Ringkasan Performa Nilai" class="grid grid-cols-2 gap-2.5" data-purpose="summary-cards">
+<!-- Card 1: Rata-rata Nilai -->
+<article class="bg-surface rounded-2xl p-3 border border-appBorder shadow-sm flex items-center justify-between">
+<div>
+<p class="text-[11px] font-medium text-appMuted leading-tight">Rata-rata</p>
+<p class="text-xl font-bold text-info mt-1 tracking-tight">88.5</p>
+</div>
+<div class="w-9 h-9 rounded-xl bg-sky-50 text-info flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">analytics</span>
+</div>
+</article>
+<!-- Card 2: Nilai Tertinggi -->
+<article class="bg-surface rounded-2xl p-3 border border-appBorder shadow-sm flex items-center justify-between">
+<div>
+<p class="text-[11px] font-medium text-appMuted leading-tight">Tertinggi</p>
+<p class="text-xl font-bold text-success mt-1 tracking-tight">95</p>
+</div>
+<div class="w-9 h-9 rounded-xl bg-emerald-50 text-success flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">trending_up</span>
+</div>
+</article>
+<!-- Card 3: Nilai Terendah -->
+<article class="bg-surface rounded-2xl p-3 border border-appBorder shadow-sm flex items-center justify-between">
+<div>
+<p class="text-[11px] font-medium text-appMuted leading-tight">Terendah</p>
+<p class="text-xl font-bold text-amber-500 mt-1 tracking-tight">78</p>
+</div>
+<div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">trending_down</span>
+</div>
+</article>
+<!-- Card 4: Mata Pelajaran -->
+<article class="bg-surface rounded-2xl p-3 border border-appBorder shadow-sm flex items-center justify-between">
+<div>
+<p class="text-[11px] font-medium text-appMuted leading-tight">Mapel</p>
+<p class="text-xl font-bold text-appText mt-1 tracking-tight">6</p>
+</div>
+<div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">menu_book</span>
+</div>
+</article>
+</section>
+<!-- END: SummaryStats -->
+<!-- BEGIN: SubjectListSection -->
+<section class="space-y-2 pt-1" data-purpose="grades-list">
+<!-- Section Header -->
+<div class="flex items-center justify-between px-0.5 pb-0.5">
+<h2 class="text-xs font-bold text-appText uppercase tracking-wider">Daftar Nilai</h2>
+<span class="text-[11px] font-semibold text-primary bg-orange-50 px-2 py-0.5 rounded-full border border-orange-100">
+            6 Mata Pelajaran
+          </span>
+</div>
+<!-- Subject Item 1: Matematika -->
+<article class="bg-surface border border-appBorder rounded-2xl p-3 shadow-xs flex items-center justify-between hover:border-slate-300 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">calculate</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-appText leading-snug">Matematika</h3>
+<p class="text-[11px] text-appMuted">Nilai Akhir: <span class="font-semibold text-appText">88</span></p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-xs font-bold text-appText">88</span>
+<span class="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-600 text-xs font-bold flex items-center justify-center">
+              A
+            </span>
+</div>
+</article>
+<!-- Subject Item 2: Bahasa Indonesia -->
+<article class="bg-surface border border-appBorder rounded-2xl p-3 shadow-xs flex items-center justify-between hover:border-slate-300 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-appText leading-snug">Bahasa Indonesia</h3>
+<p class="text-[11px] text-appMuted">Nilai Akhir: <span class="font-semibold text-appText">90</span></p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-xs font-bold text-appText">90</span>
+<span class="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-600 text-xs font-bold flex items-center justify-center">
+              A
+            </span>
+</div>
+</article>
+<!-- Subject Item 3: Bahasa Inggris -->
+<article class="bg-surface border border-appBorder rounded-2xl p-3 shadow-xs flex items-center justify-between hover:border-slate-300 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">translate</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-appText leading-snug">Bahasa Inggris</h3>
+<p class="text-[11px] text-appMuted">Nilai Akhir: <span class="font-semibold text-appText">85</span></p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-xs font-bold text-appText">85</span>
+<span class="w-7 h-7 rounded-lg bg-blue-50 border border-blue-200 text-blue-600 text-xs font-bold flex items-center justify-center">
+              B
+            </span>
+</div>
+</article>
+<!-- Subject Item 4: Fisika -->
+<article class="bg-surface border border-appBorder rounded-2xl p-3 shadow-xs flex items-center justify-between hover:border-slate-300 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">bolt</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-appText leading-snug">Fisika</h3>
+<p class="text-[11px] text-appMuted">Nilai Akhir: <span class="font-semibold text-appText">92</span></p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-xs font-bold text-appText">92</span>
+<span class="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-600 text-xs font-bold flex items-center justify-center">
+              A
+            </span>
+</div>
+</article>
+<!-- Subject Item 5: Kimia -->
+<article class="bg-surface border border-appBorder rounded-2xl p-3 shadow-xs flex items-center justify-between hover:border-slate-300 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">science</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-appText leading-snug">Kimia</h3>
+<p class="text-[11px] text-appMuted">Nilai Akhir: <span class="font-semibold text-appText">84</span></p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-xs font-bold text-appText">84</span>
+<span class="w-7 h-7 rounded-lg bg-blue-50 border border-blue-200 text-blue-600 text-xs font-bold flex items-center justify-center">
+              B
+            </span>
+</div>
+</article>
+<!-- Subject Item 6: Sejarah -->
+<article class="bg-surface border border-appBorder rounded-2xl p-3 shadow-xs flex items-center justify-between hover:border-slate-300 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">history_edu</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-appText leading-snug">Sejarah</h3>
+<p class="text-[11px] text-appMuted">Nilai Akhir: <span class="font-semibold text-appText">78</span></p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-xs font-bold text-appText">78</span>
+<span class="w-7 h-7 rounded-lg bg-blue-50 border border-blue-200 text-blue-600 text-xs font-bold flex items-center justify-center">
+              B
+            </span>
+</div>
+</article>
+</section>
+<!-- END: SubjectListSection -->
+<!-- Bottom Spacer for comfortable scroll over nav bar -->
+<div class="h-2"></div>
+</main>
+<!-- END: ScrollableContent -->
+<!-- BEGIN: BottomNavigation -->
+<footer class="bg-surface border-t border-appBorder pt-2 pb-1.5 px-6 shrink-0 z-30" data-purpose="bottom-navigation">
+<nav aria-label="Menu Utama Navigasi" class="flex justify-between items-center">
+<!-- Nav Item 1: Beranda -->
+<button class="flex flex-col items-center group py-0.5" type="button">
+<span class="material-symbols-outlined text-appMuted group-hover:text-appText text-[22px]">home</span>
+<span class="text-[10px] text-appMuted group-hover:text-appText font-medium mt-0.5">Beranda</span>
+</button>
+<!-- Nav Item 2: Anak (Active) -->
+<button class="flex flex-col items-center py-0.5" type="button">
+<div class="relative">
+<span class="material-symbols-outlined filled text-primary text-[22px]">school</span>
+</div>
+<span class="text-[10px] text-primary font-bold mt-0.5">Anak</span>
+<!-- Active Dot Indicator -->
+<div class="w-1 h-1 bg-primary rounded-full mt-0.5"></div>
+</button>
+<!-- Nav Item 3: Tagihan -->
+<button class="flex flex-col items-center group py-0.5" type="button">
+<span class="material-symbols-outlined text-appMuted group-hover:text-appText text-[22px]">receipt_long</span>
+<span class="text-[10px] text-appMuted group-hover:text-appText font-medium mt-0.5">Tagihan</span>
+</button>
+<!-- Nav Item 4: Akun -->
+<button class="flex flex-col items-center group py-0.5" type="button">
+<span class="material-symbols-outlined text-appMuted group-hover:text-appText text-[22px]">person</span>
+<span class="text-[10px] text-appMuted group-hover:text-appText font-medium mt-0.5">Akun</span>
+</button>
+</nav>
+<!-- iOS Home Indicator Pill -->
+<div class="w-32 h-1 bg-slate-900/30 rounded-full mx-auto mt-2" data-purpose="home-indicator"></div>
+</footer>
+<!-- END: BottomNavigation -->
+</div>
+<!-- END: PhoneFrame -->
+</body></html>

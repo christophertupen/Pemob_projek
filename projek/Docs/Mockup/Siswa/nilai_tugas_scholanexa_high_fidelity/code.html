@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nilai (Tugas) - ScholaNexa</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#17212B',
+              coral: '#FF7F50',
+              yellow: '#FFD166',
+              mint: '#06D6A0',
+              blue: '#118AB2',
+              bg: '#F8FAFC',
+              border: '#E2E8F0',
+              muted: '#64748B'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Base Styles -->
+<style data-purpose="base-layout">
+    body {
+      background-color: #CBD5E1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbars while maintaining functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="p-0 sm:p-6 bg-slate-300">
+<!-- BEGIN: PhoneContainer -->
+<!-- Outer iPhone Device Mockup Container (390px x 844px) -->
+<div class="relative w-[390px] h-[844px] bg-white rounded-[50px] shadow-2xl border-[10px] border-[#17212B] overflow-hidden flex flex-col justify-between select-none">
+<!-- BEGIN: StatusBar -->
+<!-- Top System Status Bar with Dynamic Island -->
+<header class="relative w-full pt-3 px-7 flex items-center justify-between z-30 bg-white">
+<!-- iOS Time -->
+<span class="text-sm font-semibold text-[#17212B] tracking-tight">09:41</span>
+<!-- Dynamic Island Cutout -->
+<div class="absolute left-1/2 -translate-x-1/2 top-2.5 w-[120px] h-[34px] bg-black rounded-full flex items-center justify-end px-3">
+<div class="w-3 h-3 bg-neutral-900 rounded-full border border-neutral-800"></div>
+</div>
+<!-- Status Icons (Cellular, Wifi, Battery) -->
+<div class="flex items-center space-x-1.5 text-[#17212B]">
+<!-- Signal Icon -->
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M2 17h3v4H2v-4zm5-4h3v8H7v-8zm5-5h3v13h-3V8zm5-5h3v18h-3V3z"></path>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A17.88 17.88 0 0012 4zm0 3.5c3.73 0 7.12 1.39 9.71 3.71L12 19.1 2.29 11.21A14.28 14.28 0 0112 7.5z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-5 h-2.5 border border-[#17212B] rounded-sm p-[1px] flex items-center">
+<div class="h-full w-full bg-[#17212B] rounded-[1px]"></div>
+</div>
+</div>
+</header>
+<!-- END: StatusBar -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 flex flex-col px-5 pt-3 overflow-y-auto no-scrollbar bg-white">
+<!-- Top Header Title & User Profile -->
+<section class="flex items-center justify-between mb-4">
+<h1 class="text-3xl font-extrabold text-[#17212B] tracking-tight">Nilai</h1>
+<!-- User Avatar Button -->
+<button aria-label="Profil Pengguna" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 border border-slate-200 hover:bg-slate-200 transition-colors" type="button">
+<svg class="w-5 h-5 text-[#17212B]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</section>
+<!-- Navigation Tabs: Semester, Tugas (Active), Riwayat -->
+<nav aria-label="Tabs Nilai" class="flex border-b border-slate-200 mb-5">
+<button class="py-2.5 px-4 text-sm font-medium text-slate-400 hover:text-slate-600 transition-colors" type="button">
+          Semester
+        </button>
+<button class="relative py-2.5 px-4 text-sm font-bold text-[#17212B]" type="button">
+          Tugas
+          <!-- Active Tab Indicator -->
+<span class="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#17212B] rounded-full"></span>
+</button>
+<button class="py-2.5 px-4 text-sm font-medium text-slate-400 hover:text-slate-600 transition-colors" type="button">
+          Riwayat
+        </button>
+</nav>
+<!-- Grade Items List (Wireframe IMAGE_1 Representation) -->
+<section aria-label="Daftar Nilai Tugas" class="flex flex-col space-y-3 pb-6">
+<!-- Card 1: Matematika -->
+<article class="bg-white border border-[#E2E8F0] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-base font-bold text-[#17212B] tracking-tight leading-snug">Latihan Soal Limit</h2>
+<div class="flex items-center text-xs text-slate-500 mt-1 font-medium">
+<span class="text-[#118AB2] font-semibold">Matematika</span>
+<span class="mx-1.5 text-slate-300">•</span>
+<span>Dinilai 20 Okt 2026</span>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[50px] text-right">
+<span class="text-2xl font-black text-[#17212B]">92</span>
+</div>
+</article>
+<!-- Card 2: Fisika -->
+<article class="bg-white border border-[#E2E8F0] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-base font-bold text-[#17212B] tracking-tight leading-snug">Laporan Praktikum Gerak</h2>
+<div class="flex items-center text-xs text-slate-500 mt-1 font-medium">
+<span class="text-[#118AB2] font-semibold">Fisika</span>
+<span class="mx-1.5 text-slate-300">•</span>
+<span>Dinilai 28 Okt 2026</span>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[50px] text-right">
+<span class="text-2xl font-black text-[#17212B]">85</span>
+</div>
+</article>
+<!-- Card 3: Bahasa Inggris -->
+<article class="bg-white border border-[#E2E8F0] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-base font-bold text-[#17212B] tracking-tight leading-snug">Essay Descriptive Text</h2>
+<div class="flex items-center text-xs text-slate-500 mt-1 font-medium">
+<span class="text-[#118AB2] font-semibold">Bahasa Inggris</span>
+<span class="mx-1.5 text-slate-300">•</span>
+<span>Dinilai 1 Nov 2026</span>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[50px] text-right">
+<span class="text-2xl font-black text-[#17212B]">78</span>
+</div>
+</article>
+<!-- Card 4: Kimia -->
+<article class="bg-white border border-[#E2E8F0] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-base font-bold text-[#17212B] tracking-tight leading-snug">Rangkuman Senyawa</h2>
+<div class="flex items-center text-xs text-slate-500 mt-1 font-medium">
+<span class="text-[#118AB2] font-semibold">Kimia</span>
+<span class="mx-1.5 text-slate-300">•</span>
+<span>Dinilai 25 Okt 2026</span>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[50px] text-right">
+<span class="text-2xl font-black text-[#17212B]">80</span>
+</div>
+</article>
+<!-- Card 5: Sejarah -->
+<article class="bg-white border border-[#E2E8F0] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex-1 pr-3">
+<h2 class="text-base font-bold text-[#17212B] tracking-tight leading-snug">Analisis Perang Dingin</h2>
+<div class="flex items-center text-xs text-slate-500 mt-1 font-medium">
+<span class="text-[#118AB2] font-semibold">Sejarah</span>
+<span class="mx-1.5 text-slate-300">•</span>
+<span>Dinilai 30 Okt 2026</span>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[50px] text-right">
+<span class="text-2xl font-black text-[#17212B]">88</span>
+</div>
+</article>
+</section>
+</main>
+<!-- END: MainContentArea -->
+<!-- BEGIN: BottomNavigation -->
+<footer class="bg-white border-t border-slate-100 px-3 pt-2 pb-6 z-20 flex flex-col items-center">
+<nav aria-label="Menu Utama" class="w-full flex justify-around items-center">
+<!-- Tab 1: Beranda -->
+<button class="flex flex-col items-center group py-1 text-slate-400 hover:text-slate-600 transition-colors" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium mt-1">Beranda</span>
+</button>
+<!-- Tab 2: Jadwal -->
+<button class="flex flex-col items-center group py-1 text-slate-400 hover:text-slate-600 transition-colors" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round" width="18" x="3" y="4"></rect>
+<line stroke-linecap="round" stroke-linejoin="round" x1="16" x2="16" y1="2" y2="6"></line>
+<line stroke-linecap="round" stroke-linejoin="round" x1="8" x2="8" y1="2" y2="6"></line>
+<line stroke-linecap="round" stroke-linejoin="round" x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+<span class="text-[10px] font-medium mt-1">Jadwal</span>
+</button>
+<!-- Tab 3: Belajar -->
+<button class="flex flex-col items-center group py-1 text-slate-400 hover:text-slate-600 transition-colors" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium mt-1">Belajar</span>
+</button>
+<!-- Tab 4: Nilai (ACTIVE) -->
+<button class="flex flex-col items-center py-1 text-[#FF7F50]" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M18 20V10M12 20V4M6 20v-6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-bold mt-1 text-[#FF7F50]">Nilai</span>
+</button>
+<!-- Tab 5: Akun -->
+<button class="flex flex-col items-center group py-1 text-slate-400 hover:text-slate-600 transition-colors" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium mt-1">Akun</span>
+</button>
+</nav>
+<!-- iOS Bottom Home Indicator Bar -->
+<div class="mt-4 w-32 h-1 bg-[#17212B] rounded-full"></div>
+</footer>
+<!-- END: BottomNavigation -->
+</div>
+<!-- END: PhoneContainer -->
+</body></html>

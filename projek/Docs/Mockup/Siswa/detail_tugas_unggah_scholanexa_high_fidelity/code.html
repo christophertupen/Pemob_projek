@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScholaNexa - Detail Pengumpulan Tugas</title>
+<!-- Tailwind CSS CDN with Forms and Container Queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans for Flutter Material 3 aesthetic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-theme">
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbars for slick mobile viewport presentation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#0B1118] min-h-screen flex items-center justify-center p-2 sm:p-6 antialiased selection:bg-[#FF7F50] selection:text-white">
+<!-- BEGIN: PhoneChassis -->
+<!-- Outer Device Mockup Frame: 390x844 iPhone form-factor styled in Dark Navy (#17212B) -->
+<div class="relative w-[390px] h-[844px] bg-[#17212B] rounded-[52px] p-[10px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.08)] flex flex-col overflow-hidden">
+<!-- Outer screen border ring -->
+<div class="relative w-full h-full bg-[#F8FAFC] rounded-[44px] overflow-hidden flex flex-col">
+<!-- BEGIN: DynamicIslandAndStatusBar -->
+<!-- Top Status Bar & Dynamic Island Cutout -->
+<div class="relative z-30 pt-3 px-7 pb-1 flex items-center justify-between bg-[#F8FAFC] shrink-0 select-none">
+<!-- iOS Clock Display -->
+<span class="text-[14px] font-bold text-[#17212B] tracking-tight">09:41</span>
+<!-- Centered Dynamic Island Hardware Cutout -->
+<div class="absolute left-1/2 -translate-x-1/2 top-2.5 w-[116px] h-[28px] bg-black rounded-full flex items-center justify-end pr-2.5 gap-2">
+<!-- Camera lens reflection simulation -->
+<div class="w-2.5 h-2.5 rounded-full bg-[#0d1627] border border-[#1e293b]/40"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#0a101d] ring-1 ring-[#15233e]"></div>
+</div>
+<!-- Status Icons: Cellular, Wifi, Battery -->
+<div class="flex items-center gap-1.5 text-[#17212B]">
+<!-- Cellular Icon -->
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 16 16">
+<path d="M1 12h2v3H1v-3zm3.5-3h2v6h-2V9zm3.5-3h2v9h-2V6zm3.5-3h2v12h-2V3z"></path>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 16 16">
+<path d="M8 3.5a10.97 10.97 0 00-6.75 2.34.75.75 0 001 1.12A9.47 9.47 0 018 5c2.09 0 4.02.67 5.75 1.96a.75.75 0 001-1.12A10.97 10.97 0 008 3.5zm-4.32 4.4a7 7 0 018.64 0 .75.75 0 00.96-1.15 8.5 8.5 0 00-10.56 0 .75.75 0 10.96 1.15zm2.14 2.2a3.5 3.5 0 014.36 0 .75.75 0 00.94-1.17 5 5 0 00-6.24 0 .75.75 0 00.94 1.17zM8 12.5a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="flex items-center gap-0.5">
+<div class="w-5 h-2.5 border border-[#17212B] rounded-[3px] p-[1px] flex items-center">
+<div class="w-full h-full bg-[#17212B] rounded-[1.5px]"></div>
+</div>
+<div class="w-0.5 h-1 bg-[#17212B] rounded-r-[1px]"></div>
+</div>
+</div>
+</div>
+<!-- END: DynamicIslandAndStatusBar -->
+<!-- BEGIN: TopAppBar -->
+<!-- ScholaNexa App Bar with Rounded Action Controls -->
+<header class="px-5 pt-2 pb-2 flex items-center justify-between shrink-0 bg-[#F8FAFC]" data-purpose="app-bar">
+<!-- Back Navigation Button -->
+<button aria-label="Kembali" class="w-10 h-10 rounded-2xl bg-white border border-[#E2E8F0] shadow-sm flex items-center justify-center text-[#17212B] hover:bg-slate-50 transition-colors active:scale-95" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Help / Info Button -->
+<button aria-label="Pusat Bantuan" class="w-10 h-10 rounded-full bg-white border border-[#E2E8F0] shadow-sm flex items-center justify-center text-[#64717D] hover:text-[#17212B] hover:bg-slate-50 transition-colors active:scale-95" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M12 17.25h.007v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</header>
+<!-- END: TopAppBar -->
+<!-- BEGIN: ScrollableContent -->
+<!-- Main Content Area with Material 3 spacing and styling -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-5 pt-2 pb-4 space-y-4">
+<!-- BEGIN: AssignmentHeaderBlock -->
+<section class="space-y-2.5" data-purpose="assignment-header">
+<!-- Title & Submission Status Row -->
+<div class="flex items-start justify-between gap-2">
+<h1 class="font-bold text-xl leading-tight text-[#17212B]">
+              Latihan Soal Integral
+            </h1>
+<!-- Status Badge: Belum Dikumpul -->
+<span class="inline-flex items-center shrink-0 bg-[#FFF3D6] text-[#B7791F] text-xs font-semibold px-2.5 py-1 rounded-full border border-[#FFD166]/40">
+              Belum Dikumpul
+            </span>
+</div>
+<!-- Subject & Teacher Info -->
+<p class="text-sm font-medium text-[#64717D]">
+            Matematika • Bu Sari Wulandari
+          </p>
+<!-- Deadline Badge -->
+<div>
+<div class="inline-flex items-center gap-1.5 bg-[#E5F4FA] text-[#118AB2] text-xs font-semibold px-3 py-1.5 rounded-full">
+<svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Tenggat: Hari ini, 23.59 WIB</span>
+</div>
+</div>
+</section>
+<!-- END: AssignmentHeaderBlock -->
+<!-- Divider Line -->
+<hr class="border-[#E2E8F0]"/>
+<!-- BEGIN: InstructionsSection -->
+<section class="space-y-1.5" data-purpose="assignment-instructions">
+<h2 class="text-sm font-bold text-[#17212B]">
+            Instruksi Tugas
+          </h2>
+<p class="text-sm text-[#64717D] leading-relaxed">
+            Kerjakan latihan soal kalkulus integral tak tentu bab 4 halaman 82–84 di buku catatan, lalu foto atau scan dalam format PDF/JPG dan kumpulkan sebelum batas tenggat waktu berakhir.
+          </p>
+</section>
+<!-- END: InstructionsSection -->
+<!-- BEGIN: AttachmentCard -->
+<section data-purpose="teacher-attachment">
+<div class="bg-white border border-[#E2E8F0] rounded-2xl p-3 flex items-center justify-between shadow-sm transition hover:border-[#CBD5E1]">
+<!-- File details with PDF symbol -->
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-11 h-11 rounded-xl bg-[#E5F4FA] text-[#118AB2] flex items-center justify-center shrink-0">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="min-w-0">
+<p class="text-sm font-semibold text-[#17212B] truncate">
+                  Modul_Latihan_Integral.pdf
+                </p>
+<p class="text-xs text-[#64717D] mt-0.5">
+                  2,4 MB • Diunggah 28 Okt
+                </p>
+</div>
+</div>
+<!-- Download Button -->
+<button aria-label="Unduh Lampiran" class="w-9 h-9 rounded-full bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#64717D] hover:text-[#118AB2] hover:bg-[#E5F4FA] transition-colors shrink-0" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 4.5v12m0 0l-3.75-3.75M12 16.5l3.75-3.75M4.5 19.5h15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</section>
+<!-- END: AttachmentCard -->
+<!-- BEGIN: SubmissionUploadSection -->
+<section class="space-y-2.5 pt-1" data-purpose="submission-upload">
+<div class="flex items-center justify-between">
+<h2 class="text-sm font-bold text-[#17212B]">
+              Unggah Berkas Tugas
+            </h2>
+<span class="text-xs text-[#64717D]">Maks. 10 MB</span>
+</div>
+<!-- Helper Callout Banner -->
+<div class="bg-[#F1F5F9] rounded-xl p-3 flex items-start gap-2.5 border border-[#E2E8F0]">
+<svg class="w-4 h-4 text-[#64717D] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<p class="text-xs text-[#64717D] leading-snug">
+              Format berkas yang didukung: PDF, DOCX, JPG atau PNG (Maks. 10 MB)
+            </p>
+</div>
+<!-- Dropzone Card -->
+<div class="border-2 border-dashed border-[#CBD5E1] rounded-2xl p-5 bg-white flex flex-col items-center justify-center text-center cursor-pointer hover:border-[#FF7F50] transition-colors group">
+<div class="w-12 h-12 rounded-full bg-[#F1F5F9] text-[#64717D] group-hover:bg-[#FF7F50]/10 group-hover:text-[#FF7F50] transition flex items-center justify-center">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="font-semibold text-sm text-[#17212B] mt-2.5">
+              Pilih Berkas atau Tarik ke Sini
+            </p>
+<p class="text-xs text-[#94A3B8] mt-1">
+              Maksimal ukuran file 10 MB
+            </p>
+</div>
+</section>
+<!-- END: SubmissionUploadSection -->
+</main>
+<!-- END: ScrollableContent -->
+<!-- BEGIN: BottomActionArea -->
+<!-- Fixed bottom CTA & secondary actions container -->
+<footer class="bg-white border-t border-[#E2E8F0] px-5 pt-3.5 pb-2 shrink-0 flex flex-col items-center" data-purpose="actions-footer">
+<!-- Primary Submit Button -->
+<button class="w-full bg-[#FF7F50] hover:bg-[#ff6f3c] text-white font-bold text-sm py-3.5 rounded-2xl shadow-sm transition active:scale-[0.99] flex items-center justify-center gap-2" type="button">
+<span>Kumpulkan Tugas</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Secondary Draft Button -->
+<button class="w-full text-center text-sm font-semibold text-[#64717D] hover:text-[#17212B] py-2 mt-1 transition" type="button">
+          Simpan sebagai Draf
+        </button>
+<!-- iOS Bottom Home Indicator Bar -->
+<div class="w-32 h-1 bg-[#17212B] rounded-full mt-2 mb-1"></div>
+</footer>
+<!-- END: BottomActionArea -->
+</div>
+</div>
+<!-- END: PhoneChassis -->
+</body></html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#7d8497", "secondary-fixed": "#dce2f3", "tertiary-fixed": "#f9debf", "on-surface-variant": "#45464c", "error-container": "#ffdad6", "background": "#f7f9fd", "on-tertiary-fixed": "#261906", "inverse-surface": "#2d3134", "inverse-primary": "#c0c6db", "tertiary": "#000000", "surface-container": "#eceef2", "surface-container-low": "#f2f4f8", "on-tertiary-container": "#968065", "on-error-container": "#93000a", "surface-bright": "#f7f9fd", "on-error": "#ffffff", "outline": "#76777d", "surface-variant": "#e0e2e6", "on-tertiary-fixed-variant": "#55442d", "surface-container-lowest": "#ffffff", "on-background": "#191c1f", "error": "#ba1a1a", "surface-container-highest": "#e0e2e6", "outline-variant": "#c6c6cd", "on-secondary-fixed-variant": "#404754", "surface-container-high": "#e6e8ec", "primary-fixed-dim": "#c0c6db", "on-primary-fixed-variant": "#404758", "on-primary-fixed": "#141b2b", "surface-tint": "#575e70", "primary-container": "#141b2b", "on-tertiary": "#ffffff", "tertiary-container": "#261906", "tertiary-fixed-dim": "#dcc2a4", "on-secondary-container": "#5e6572", "primary-fixed": "#dce2f7", "on-secondary": "#ffffff", "secondary": "#585f6c", "on-secondary-fixed": "#151c27", "surface": "#f7f9fd", "inverse-on-surface": "#eff1f5", "on-primary": "#ffffff", "on-surface": "#191c1f", "secondary-fixed-dim": "#c0c7d6", "surface-dim": "#d8dade", "primary": "#000000", "secondary-container": "#dce2f3" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "body-md": ["Inter"], "title-md": ["Inter"], "label-lg": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }] } } } }</script><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><main class="flex-1 flex flex-col relative w-full bg-surface pt-safe pb-safe"><div class="flex flex-col w-full items-center justify-center p-4">
+<div class="relative flex flex-col justify-between w-[390px] h-[844px] bg-white border-2 border-[#111827] rounded-[48px] overflow-hidden select-none">
+<!-- Top Area: Status Bar & Dynamic Island -->
+<div class="pt-3 px-6 shrink-0 z-20">
+<div class="flex items-center justify-between h-7 relative">
+<!-- Time Indicator -->
+<div class="w-10 h-3 bg-[#8E8E8E] rounded-full"></div>
+<!-- Dynamic Island -->
+<div class="absolute left-1/2 -translate-x-1/2 top-0 w-[100px] h-6 bg-[#111827] rounded-full"></div>
+<!-- Geometric Sensor/Signal/Battery Indicators -->
+<div class="flex items-center gap-1.5">
+<!-- Cellular signal bars -->
+<div class="flex items-end gap-0.5 h-3">
+<span class="w-0.5 h-1 bg-[#111827] rounded-full"></span>
+<span class="w-0.5 h-1.5 bg-[#111827] rounded-full"></span>
+<span class="w-0.5 h-2 bg-[#111827] rounded-full"></span>
+<span class="w-0.5 h-3 bg-[#111827] rounded-full"></span>
+</div>
+<!-- Wifi -->
+<div class="w-3.5 h-3 flex items-center justify-center">
+<span class="w-2.5 h-2.5 border-t-2 border-r-2 border-[#111827] rounded-tr-full -rotate-45 block"></span>
+</div>
+<!-- Battery Pill -->
+<div class="w-5 h-2.5 border border-[#111827] rounded-sm p-0.5 flex items-center">
+<div class="w-3 h-full bg-[#111827] rounded-xs"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 overflow-y-auto px-4 pt-4 pb-2 flex flex-col">
+<!-- 1. Top Section (Centered Profile) -->
+<div class="flex flex-col items-center">
+<!-- Profile Avatar Placeholder -->
+<div class="w-20 h-20 bg-[#E5E7EB] rounded-full mx-auto border border-[#D1D5DB]"></div>
+<!-- Name Placeholder -->
+<div class="w-36 h-4 bg-[#8E8E8E] rounded-full mx-auto mt-3"></div>
+<!-- Subtitle/Phone/Email Placeholder -->
+<div class="w-48 h-3 bg-[#C8C8C8] rounded-full mx-auto mt-2"></div>
+</div>
+<!-- 2. Linked Children Section -->
+<div class="mt-6">
+<!-- Section Header Bar -->
+<div class="w-28 h-3.5 bg-[#8E8E8E] rounded-full mb-3"></div>
+<!-- Child Card 1 -->
+<div class="border border-[#E5E7EB] rounded-xl p-3 flex items-center gap-3 mb-2.5 bg-white">
+<div class="w-10 h-10 bg-[#E5E7EB] rounded-full shrink-0"></div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="w-28 h-3 bg-[#8E8E8E] rounded-full"></div>
+<div class="w-20 h-2.5 bg-[#C8C8C8] rounded-full mt-1.5"></div>
+</div>
+<div class="w-2 h-2 border-t-2 border-r-2 border-[#9CA3AF] rotate-45 ml-auto shrink-0 mr-1"></div>
+</div>
+<!-- Child Card 2 -->
+<div class="border border-[#E5E7EB] rounded-xl p-3 flex items-center gap-3 mb-2.5 bg-white">
+<div class="w-10 h-10 bg-[#E5E7EB] rounded-full shrink-0"></div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="w-28 h-3 bg-[#8E8E8E] rounded-full"></div>
+<div class="w-20 h-2.5 bg-[#C8C8C8] rounded-full mt-1.5"></div>
+</div>
+<div class="w-2 h-2 border-t-2 border-r-2 border-[#9CA3AF] rotate-45 ml-auto shrink-0 mr-1"></div>
+</div>
+</div>
+<!-- 3. Menu Rows Section -->
+<div class="mt-2">
+<div class="border border-[#E5E7EB] rounded-xl divide-y divide-[#E5E7EB] bg-white">
+<!-- Menu Row 1 -->
+<div class="flex items-center justify-between p-3.5">
+<div class="flex items-center">
+<div class="w-6 h-6 rounded-full bg-[#E5E7EB] shrink-0"></div>
+<div class="w-32 h-3 bg-[#8E8E8E] rounded-full ml-3"></div>
+</div>
+<div class="w-2 h-2 border-t-2 border-r-2 border-[#9CA3AF] rotate-45 mr-1 shrink-0"></div>
+</div>
+<!-- Menu Row 2 -->
+<div class="flex items-center justify-between p-3.5">
+<div class="flex items-center">
+<div class="w-6 h-6 rounded-full bg-[#E5E7EB] shrink-0"></div>
+<div class="w-28 h-3 bg-[#8E8E8E] rounded-full ml-3"></div>
+</div>
+<div class="w-2 h-2 border-t-2 border-r-2 border-[#9CA3AF] rotate-45 mr-1 shrink-0"></div>
+</div>
+</div>
+</div>
+<!-- 4. Logout Button -->
+<div class="mt-auto pt-6 pb-2">
+<div class="border-2 border-[#111827] bg-white h-12 rounded-xl flex items-center justify-center w-full">
+<div class="w-20 h-3 bg-[#8E8E8E] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- 5. Bottom Navigation Bar -->
+<div class="shrink-0 border-t border-[#E5E7EB] bg-white z-10">
+<div class="flex justify-around items-center pt-3 pb-2 px-2">
+<!-- Item 1 (Home) -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-5 h-5 rounded-full bg-[#C8C8C8]"></div>
+<div class="w-7 h-1.5 rounded-full bg-[#C8C8C8] mt-1"></div>
+</div>
+<!-- Item 2 (Academic) -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-5 h-5 rounded-full bg-[#C8C8C8]"></div>
+<div class="w-7 h-1.5 rounded-full bg-[#C8C8C8] mt-1"></div>
+</div>
+<!-- Item 3 (Bills) -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-5 h-5 rounded-full bg-[#C8C8C8]"></div>
+<div class="w-7 h-1.5 rounded-full bg-[#C8C8C8] mt-1"></div>
+</div>
+<!-- Item 4 (Account - ACTIVE) -->
+<div class="flex flex-col items-center flex-1 relative">
+<div class="w-5 h-5 rounded-full bg-[#111827]"></div>
+<div class="w-7 h-1.5 rounded-full bg-[#111827] mt-1"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-[#111827] mt-1"></div>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="w-32 h-1 bg-[#111827] rounded-full mx-auto mb-1.5"></div>
+</div>
+</div>
+</div></main></body></html>

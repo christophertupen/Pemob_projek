@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIAKAD Orang Tua - Pilih Anak</title>
+<!-- Google Fonts: Inter & Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              coral: '#FF7F50',
+              'coral-light': '#FFF6F2',
+              'coral-dark': '#E66838',
+              yellow: '#FFD166',
+              mint: '#06D6A0',
+              ocean: '#118AB2',
+              dark: '#172033',
+              text: '#191C1F',
+              muted: '#626B78',
+              border: '#E5E9F0',
+              bg: '#F7F9FC'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: General & Helpers -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0c1017;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<!-- Custom Styles: Device Frame & Sheet Shadow -->
+<style data-purpose="chassis-effects">
+    .phone-container {
+      width: 390px;
+      height: 844px;
+      border-radius: 50px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 12px #1e2638, 0 0 0 14px #2b354d;
+      position: relative;
+      overflow: hidden;
+      background: #F7F9FC;
+    }
+    .modal-shadow {
+      box-shadow: 0 -12px 35px -5px rgba(15, 23, 42, 0.22);
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="p-4 sm:p-8 flex items-center justify-center">
+<!-- BEGIN: PhoneFrame -->
+<div class="phone-container select-none flex flex-col justify-between" data-purpose="iphone-chassis">
+<!-- BEGIN: StatusBar -->
+<header class="absolute top-0 left-0 w-full z-50 px-8 pt-3.5 pb-2 flex justify-between items-center text-slate-800 text-xs font-semibold">
+<!-- iOS Time -->
+<span class="tracking-tight text-[14px] font-semibold text-slate-900 pl-1">09:41</span>
+<!-- Dynamic Island / Camera Pill -->
+<div class="absolute left-1/2 -translate-x-1/2 top-2.5 w-[118px] h-[32px] bg-black rounded-full flex items-center justify-end pr-3 space-x-1.5 shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-[#10141f]"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#0a1b2e]/60 flex items-center justify-center">
+<div class="w-1 h-1 rounded-full bg-[#1b3a63]"></div>
+</div>
+</div>
+<!-- Status Icons (Signal, Wifi, Battery) -->
+<div class="flex items-center space-x-2 text-slate-800 pr-0.5">
+<span class="material-symbols-outlined text-[15px] font-bold">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px] font-bold">wifi</span>
+<div class="w-5 h-2.5 border border-slate-800 rounded-sm p-0.5 flex items-center">
+<div class="h-full w-full bg-slate-800 rounded-[1px]"></div>
+</div>
+</div>
+</header>
+<!-- END: StatusBar -->
+<!-- BEGIN: DashboardBackground -->
+<!-- Represents the Beranda Orang Tua (SIAKAD) interface underneath the modal overlay -->
+<main class="w-full h-full pt-14 pb-20 px-5 overflow-y-auto hide-scrollbar bg-[#F7F9FC]" data-purpose="parent-dashboard-content">
+<!-- Parent Header Profile -->
+<div class="flex justify-between items-center mb-5 mt-2">
+<div>
+<p class="text-xs text-brand-muted font-medium">Selamat Datang,</p>
+<h1 class="text-xl font-bold text-brand-dark tracking-tight">Bpk. Hendra Gunawan</h1>
+</div>
+<div class="w-11 h-11 rounded-full bg-brand-coral/15 border border-brand-coral/30 flex items-center justify-center text-brand-coral font-bold text-sm shadow-sm">
+          HG
+        </div>
+</div>
+<!-- Active Child Card Summary -->
+<div class="bg-white rounded-2xl p-4 border border-brand-border shadow-sm mb-4">
+<div class="flex items-center space-x-3 mb-2.5">
+<div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-brand-coral">
+<span class="material-symbols-outlined text-[22px]">school</span>
+</div>
+<div>
+<h2 class="text-sm font-semibold text-brand-dark">Rizky Andika Putra</h2>
+<p class="text-[11px] text-brand-muted">X MIPA 1 • SMA Negeri 1</p>
+</div>
+</div>
+<div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-brand-muted">
+<span>NIS: 202401001</span>
+<span class="text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full font-medium text-[10px]">Aktif Semester Ganjil</span>
+</div>
+</div>
+<!-- Quick Metrics Grid -->
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-white p-3.5 rounded-2xl border border-brand-border shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-brand-mint mb-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<span class="text-[11px] text-brand-muted block font-medium">Kehadiran</span>
+<span class="text-lg font-bold text-brand-dark">96.8%</span>
+</div>
+<div class="bg-white p-3.5 rounded-2xl border border-brand-border shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-500 mb-2">
+<span class="material-symbols-outlined text-[18px]">grade</span>
+</div>
+<span class="text-[11px] text-brand-muted block font-medium">Rata-rata Nilai</span>
+<span class="text-lg font-bold text-brand-dark">88.5</span>
+</div>
+</div>
+<!-- Tuition / Tagihan Card -->
+<div class="bg-white p-4 rounded-2xl border border-brand-border shadow-sm mb-4">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-brand-ocean text-lg">receipt_long</span>
+<span class="text-xs font-semibold text-brand-dark">Tagihan SPP November</span>
+</div>
+<span class="text-[10px] font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">Belum Bayar</span>
+</div>
+<p class="text-sm font-bold text-slate-800 mt-2">Rp 750.000</p>
+</div>
+<!-- Recent Announcements / Feed -->
+<div class="bg-white p-4 rounded-2xl border border-brand-border shadow-sm">
+<h3 class="text-xs font-semibold text-brand-dark mb-2">Aktivitas Terakhir</h3>
+<p class="text-xs text-brand-muted">Ulangan Harian Matematika telah diperbarui guru pengampu.</p>
+</div>
+</main>
+<!-- END: DashboardBackground -->
+<!-- BEGIN: ModalBackdrop -->
+<!-- Dimmed overlay obscuring background content -->
+<div class="absolute inset-0 bg-[#0F172A]/55 backdrop-blur-[2.5px] z-30 transition-opacity duration-300" data-purpose="modal-backdrop"></div>
+<!-- END: ModalBackdrop -->
+<!-- BEGIN: ChildSelectionBottomSheet -->
+<section class="absolute bottom-0 left-0 right-0 z-40 bg-white rounded-t-[32px] pt-3 pb-7 px-6 modal-shadow flex flex-col" data-purpose="child-selection-modal">
+<!-- Modal Pull Handle -->
+<div class="w-11 h-1.5 bg-slate-300 rounded-full mx-auto mb-4" data-purpose="drag-indicator"></div>
+<!-- Modal Header -->
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-[18px] font-bold text-brand-dark tracking-tight">Pilih Anak</h2>
+<span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-brand-muted rounded-full">2 Anak Terdaftar</span>
+</div>
+<!-- Student Selection List -->
+<div aria-label="Daftar Pilihan Anak" class="flex flex-col space-y-3 mb-5" role="radiogroup">
+<!-- Child Option 1: Selected State -->
+<article class="relative flex items-center justify-between p-3.5 rounded-2xl border-2 border-brand-coral bg-brand-coral-light/60 transition-all cursor-pointer shadow-sm" data-purpose="child-option-selected">
+<div class="flex items-center space-x-3.5">
+<!-- Student Avatar -->
+<div class="w-12 h-12 rounded-full bg-brand-coral text-white flex items-center justify-center font-bold text-base shadow-sm ring-2 ring-white">
+              RP
+            </div>
+<!-- Student Info -->
+<div>
+<h3 class="text-[15px] font-bold text-brand-dark leading-snug">Rizky Andika Putra</h3>
+<p class="text-xs text-brand-muted mt-0.5 font-medium">X IPA 1 • NIS 2024001</p>
+<div class="flex items-center space-x-1.5 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span>
+<span class="text-[11px] text-slate-500 font-medium">SMA Negeri 1</span>
+</div>
+</div>
+</div>
+<!-- Radio Indicator (Selected) -->
+<div class="w-6 h-6 rounded-full border-2 border-brand-coral flex items-center justify-center bg-white flex-shrink-0 mr-1">
+<div class="w-3 h-3 rounded-full bg-brand-coral"></div>
+</div>
+</article>
+<!-- Child Option 2: Unselected State -->
+<article class="relative flex items-center justify-between p-3.5 rounded-2xl border border-brand-border bg-white hover:bg-slate-50 transition-all cursor-pointer" data-purpose="child-option-unselected">
+<div class="flex items-center space-x-3.5">
+<!-- Student Avatar -->
+<div class="w-12 h-12 rounded-full bg-[#E2E8F0] text-slate-600 flex items-center justify-center font-bold text-base">
+              NA
+            </div>
+<!-- Student Info -->
+<div>
+<h3 class="text-[15px] font-semibold text-brand-dark leading-snug">Nadia Putri Andika</h3>
+<p class="text-xs text-brand-muted mt-0.5 font-medium">VII A • NIS 202501015</p>
+<div class="flex items-center space-x-1.5 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+<span class="text-[11px] text-slate-500 font-medium">SMP Negeri 3</span>
+</div>
+</div>
+</div>
+<!-- Radio Indicator (Unselected) -->
+<div class="w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center bg-white flex-shrink-0 mr-1">
+<!-- Empty state -->
+</div>
+</article>
+</div>
+<!-- Primary Action CTA Button -->
+<button class="w-full bg-brand-coral hover:bg-brand-coral-dark active:scale-[0.99] text-white font-semibold text-[15px] py-3.5 rounded-2xl shadow-md shadow-brand-coral/30 flex items-center justify-center space-x-2 transition-all" data-purpose="submit-button" type="button">
+<span>Pilih Anak</span>
+<span class="material-symbols-outlined text-[19px]">arrow_forward</span>
+</button>
+<!-- iOS Home Indicator Safe Area Bar -->
+<div class="w-32 h-1 bg-slate-900/80 rounded-full mx-auto mt-5" data-purpose="home-indicator"></div>
+</section>
+<!-- END: ChildSelectionBottomSheet -->
+</div>
+<!-- END: PhoneFrame -->
+<!-- Interactivity Script for Radio Selection Switching -->
+<script data-purpose="option-toggle">
+    document.addEventListener('DOMContentLoaded', () => {
+      const options = document.querySelectorAll('[data-purpose^="child-option"]');
+      
+      options.forEach(option => {
+        option.addEventListener('click', () => {
+          options.forEach(opt => {
+            // Reset to unselected style
+            opt.classList.remove('border-2', 'border-brand-coral', 'bg-brand-coral-light/60', 'shadow-sm');
+            opt.classList.add('border', 'border-brand-border', 'bg-white');
+            const radio = opt.querySelector('.rounded-full.flex-shrink-0');
+            radio.className = 'w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center bg-white flex-shrink-0 mr-1';
+            radio.innerHTML = '';
+          });
+
+          // Apply selected style
+          option.classList.remove('border', 'border-brand-border', 'bg-white');
+          option.classList.add('border-2', 'border-brand-coral', 'bg-brand-coral-light/60', 'shadow-sm');
+          const activeRadio = option.querySelector('.rounded-full.flex-shrink-0');
+          activeRadio.className = 'w-6 h-6 rounded-full border-2 border-brand-coral flex items-center justify-center bg-white flex-shrink-0 mr-1';
+          activeRadio.innerHTML = '<div class="w-3 h-3 rounded-full bg-brand-coral"></div>';
+        });
+      });
+    });
+  </script>
+</body></html>
