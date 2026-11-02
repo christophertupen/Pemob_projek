@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScholaNexa - Portal Guru</title>
+<!-- Tailwind CSS CDN with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              coral: '#FF7F50',
+              yellow: '#FFD166',
+              mint: '#06D6A0',
+              ocean: '#118AB2',
+              navy: '#172033',
+              subtle: '#626B78',
+              bg: '#F7F9FC',
+              cardBorder: '#E5E9F0'
+            }
+          },
+          boxShadow: {
+            card: '0 2px 10px rgba(23, 32, 51, 0.04)',
+            nav: '0 -4px 16px rgba(23, 32, 51, 0.05)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll">
+    /* Hide scrollbars for slick mobile view horizontal scrolling */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-200 flex justify-center items-center min-h-screen p-0 sm:p-4 font-sans text-brand-navy antialiased select-none">
+<!-- BEGIN: PhoneShellContainer -->
+<!-- Target device dimensions: 390px x 844px iPhone portrait shell -->
+<div class="relative w-[390px] h-[844px] bg-brand-bg rounded-[50px] shadow-2xl overflow-hidden flex flex-col border-[8px] border-slate-800 ring-1 ring-slate-900/10">
+<!-- BEGIN: DynamicIsland & StatusBar -->
+<!-- iOS Dynamic Island cutout and Status Header -->
+<div class="relative z-50 w-full pt-3 px-7 flex justify-between items-center text-xs font-semibold text-brand-navy select-none bg-brand-bg/80 backdrop-blur-md">
+<!-- Left time -->
+<span>09:41</span>
+<!-- Dynamic Island Pill -->
+<div class="absolute left-1/2 transform -translate-x-1/2 top-2.5 w-[112px] h-[28px] bg-black rounded-full flex items-center justify-end px-2.5 space-x-1.5 shadow-inner">
+<div class="w-2.5 h-2.5 rounded-full bg-[#1c2438]/80 border border-slate-800"></div>
+</div>
+<!-- Right status icons: Cellular, Wi-Fi, Battery -->
+<div class="flex items-center space-x-1.5">
+<!-- Cellular Signal -->
+<svg class="w-4 h-3 fill-current" viewbox="0 0 16 12">
+<rect height="4" rx="0.5" width="2.5" x="0" y="8"></rect>
+<rect height="6.5" rx="0.5" width="2.5" x="4.5" y="5.5"></rect>
+<rect height="9" rx="0.5" width="2.5" x="9" y="3"></rect>
+<rect height="11.5" rx="0.5" width="2.5" x="13.5" y="0.5"></rect>
+</svg>
+<!-- Wi-Fi -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.3c3.78 0 7.21 1.5 9.71 3.96L12 19.12 2.29 11.26C4.79 8.8 8.22 7.3 12 7.3z"></path>
+</svg>
+<!-- Battery -->
+<div class="relative flex items-center">
+<div class="w-5 h-2.5 border-[1.5px] border-brand-navy rounded-[3px] p-[1px] flex items-center">
+<div class="w-full h-full bg-brand-navy rounded-[1px]"></div>
+</div>
+<div class="w-0.5 h-1 bg-brand-navy rounded-r-[1px] -mr-1"></div>
+</div>
+</div>
+</div>
+<!-- END: DynamicIsland & StatusBar -->
+<!-- BEGIN: MainContentScrollableArea -->
+<main class="flex-1 overflow-y-auto px-5 pt-3 pb-24 no-scrollbar space-y-5" data-purpose="scrollable-screen-content">
+<!-- BEGIN: UserGreetingHeader -->
+<!-- Profile greeting & Avatar corresponding to wireframe top section -->
+<div class="flex items-center justify-between pt-1">
+<div>
+<h1 class="text-xl font-bold tracking-tight text-brand-navy">Selamat pagi, Bu Sari!</h1>
+<p class="text-xs font-medium text-brand-subtle mt-0.5">Senin, 2 November 2026</p>
+</div>
+<!-- Circular avatar with soft peach background and teacher initials -->
+<div class="w-12 h-12 rounded-full bg-[#FFE8DE] border-2 border-white shadow-sm flex items-center justify-center flex-shrink-0">
+<span class="text-brand-coral font-bold text-base">SW</span>
+</div>
+</div>
+<!-- END: UserGreetingHeader -->
+<!-- BEGIN: SectionSchedule -->
+<!-- Section 1: Jadwal Mengajar Hari Ini -->
+<section data-purpose="teaching-schedule-section">
+<div class="flex items-center justify-between mb-2.5">
+<h2 class="text-sm font-bold tracking-tight text-brand-navy">Jadwal Mengajar Hari Ini</h2>
+<a class="text-xs font-semibold text-brand-coral hover:opacity-80 transition-opacity" href="#">Lihat Semua</a>
+</div>
+<!-- 3-row Schedule Card with Material 3 card styling -->
+<div class="bg-white rounded-2xl border border-brand-cardBorder shadow-card divide-y divide-gray-100 overflow-hidden">
+<!-- Schedule Item 1 (Active Class) -->
+<div class="flex items-center justify-between p-3.5 bg-orange-50/20">
+<div class="flex items-center space-x-3">
+<!-- Active Dot -->
+<div class="relative flex items-center justify-center">
+<span class="absolute inline-flex h-3 w-3 rounded-full bg-brand-coral opacity-40 animate-ping"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-brand-coral"></span>
+</div>
+<div>
+<p class="text-[13px] font-bold text-brand-navy leading-tight">XII IPA 2 • Matematika</p>
+<p class="text-[11px] font-medium text-brand-subtle mt-0.5">07.00 – 08.30 WIB</p>
+</div>
+</div>
+<!-- Room Badge -->
+<span class="px-2.5 py-1 text-[11px] font-semibold text-brand-navy bg-slate-100 rounded-full border border-slate-200">R. 12</span>
+</div>
+<!-- Schedule Item 2 -->
+<div class="flex items-center justify-between p-3.5">
+<div class="flex items-center space-x-3">
+<!-- Inactive Dot -->
+<div class="w-2 h-2 rounded-full bg-slate-300 ml-0.5 mr-0.5"></div>
+<div>
+<p class="text-[13px] font-semibold text-brand-navy leading-tight">XII IPA 1 • Matematika</p>
+<p class="text-[11px] font-medium text-brand-subtle mt-0.5">08.30 – 10.00 WIB</p>
+</div>
+</div>
+<!-- Room Badge -->
+<span class="px-2.5 py-1 text-[11px] font-medium text-brand-subtle bg-slate-100 rounded-full border border-slate-200">R. 11</span>
+</div>
+<!-- Schedule Item 3 -->
+<div class="flex items-center justify-between p-3.5">
+<div class="flex items-center space-x-3">
+<!-- Inactive Dot -->
+<div class="w-2 h-2 rounded-full bg-slate-300 ml-0.5 mr-0.5"></div>
+<div>
+<p class="text-[13px] font-semibold text-brand-navy leading-tight">XI IPA 3 • Matematika</p>
+<p class="text-[11px] font-medium text-brand-subtle mt-0.5">10.15 – 11.45 WIB</p>
+</div>
+</div>
+<!-- Room Badge -->
+<span class="px-2.5 py-1 text-[11px] font-medium text-brand-subtle bg-slate-100 rounded-full border border-slate-200">R. 8</span>
+</div>
+</div>
+</section>
+<!-- END: SectionSchedule -->
+<!-- BEGIN: SectionClasses -->
+<!-- Section 2: Kelas yang Diampu (Wireframe 2-card layout) -->
+<section data-purpose="classes-section">
+<div class="flex items-center justify-between mb-2.5">
+<h2 class="text-sm font-bold tracking-tight text-brand-navy">Kelas yang Diampu</h2>
+<span class="text-xs font-medium text-brand-subtle">4 Kelas Aktif</span>
+</div>
+<!-- 2 Column Horizontal Cards matching wireframe -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Class Card 1 -->
+<div class="bg-white p-3.5 rounded-2xl border border-brand-cardBorder shadow-card flex flex-col justify-between hover:border-brand-coral transition-colors">
+<div class="flex items-start justify-between">
+<!-- Class Badge Icon -->
+<div class="w-10 h-10 rounded-xl bg-orange-100/70 text-brand-coral flex items-center justify-center">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L4.5 12.5 12 8.41l7.5 4.09L12 16.5zM12 19l6.5-3.55v2.33L12 21.33l-6.5-3.55v-2.33L12 19z"></path>
+</svg>
+</div>
+<!-- Status Radio Indicator -->
+<div class="w-4 h-4 rounded-full border-2 border-brand-coral flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-brand-coral"></div>
+</div>
+</div>
+<div class="mt-3">
+<h3 class="text-sm font-bold text-brand-navy">XII IPA 2</h3>
+<p class="text-xs font-medium text-brand-subtle mt-0.5">34 Siswa</p>
+</div>
+<!-- Mini Avatar Group & Quick Info -->
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
+<div class="flex -space-x-1.5 overflow-hidden">
+<div class="inline-block h-5 w-5 rounded-full ring-2 ring-white bg-blue-200 text-[9px] font-bold text-blue-700 flex items-center justify-center">A</div>
+<div class="inline-block h-5 w-5 rounded-full ring-2 ring-white bg-teal-200 text-[9px] font-bold text-teal-700 flex items-center justify-center">R</div>
+<div class="inline-block h-5 w-5 rounded-full ring-2 ring-white bg-slate-200 text-[8px] font-semibold text-slate-600 flex items-center justify-center">+32</div>
+</div>
+<span class="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">Aktif</span>
+</div>
+</div>
+<!-- Class Card 2 -->
+<div class="bg-white p-3.5 rounded-2xl border border-brand-cardBorder shadow-card flex flex-col justify-between hover:border-brand-ocean transition-colors">
+<div class="flex items-start justify-between">
+<!-- Class Badge Icon -->
+<div class="w-10 h-10 rounded-xl bg-sky-100/70 text-brand-ocean flex items-center justify-center">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"></path>
+</svg>
+</div>
+<div class="w-4 h-4 rounded-full border border-slate-300"></div>
+</div>
+<div class="mt-3">
+<h3 class="text-sm font-bold text-brand-navy">XII IPA 1</h3>
+<p class="text-xs font-medium text-brand-subtle mt-0.5">32 Siswa</p>
+</div>
+<!-- Mini Avatar Group & Quick Info -->
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
+<div class="flex -space-x-1.5 overflow-hidden">
+<div class="inline-block h-5 w-5 rounded-full ring-2 ring-white bg-purple-200 text-[9px] font-bold text-purple-700 flex items-center justify-center">B</div>
+<div class="inline-block h-5 w-5 rounded-full ring-2 ring-white bg-amber-200 text-[9px] font-bold text-amber-700 flex items-center justify-center">F</div>
+<div class="inline-block h-5 w-5 rounded-full ring-2 ring-white bg-slate-200 text-[8px] font-semibold text-slate-600 flex items-center justify-center">+30</div>
+</div>
+<span class="text-[10px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">Siap</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SectionClasses -->
+<!-- BEGIN: SectionAssignments -->
+<!-- Section 3: Tugas Aktif (Wireframe cards with progress bars) -->
+<section data-purpose="active-assignments-section">
+<div class="flex items-center justify-between mb-2.5">
+<h2 class="text-sm font-bold tracking-tight text-brand-navy">Tugas Aktif</h2>
+<a class="text-xs font-semibold text-brand-coral hover:opacity-80 transition-opacity" href="#">Lihat Semua</a>
+</div>
+<div class="space-y-3">
+<!-- Assignment Card 1 -->
+<div class="bg-white p-3.5 rounded-2xl border border-brand-cardBorder shadow-card">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="text-[13px] font-bold text-brand-navy">Latihan Soal Integral</h3>
+<p class="text-[11px] font-medium text-brand-subtle mt-0.5 flex items-center">
+<span>XII IPA 2</span>
+<span class="mx-1.5">•</span>
+<span class="text-rose-500 font-semibold">Berakhir Hari ini, 23.59</span>
+</p>
+</div>
+<!-- Action Icon Button -->
+<button aria-label="Detail Tugas" class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-brand-navy hover:bg-slate-200 transition-colors">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<!-- Progress Bar Section -->
+<div class="mt-3">
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<!-- 28/34 = 82% -->
+<div class="bg-brand-coral h-full rounded-full transition-all duration-500" style="width: 82.3%;"></div>
+</div>
+<div class="flex items-center justify-between mt-1.5">
+<span class="text-[11px] text-brand-subtle font-medium">28 dari 34 sudah mengumpulkan</span>
+<span class="text-[11px] font-bold text-brand-coral">82%</span>
+</div>
+</div>
+</div>
+<!-- Assignment Card 2 -->
+<div class="bg-white p-3.5 rounded-2xl border border-brand-cardBorder shadow-card">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="text-[13px] font-bold text-brand-navy">Ulangan Harian Limit Fungsi</h3>
+<p class="text-[11px] font-medium text-brand-subtle mt-0.5 flex items-center">
+<span>XI IPA 3</span>
+<span class="mx-1.5">•</span>
+<span>Berakhir 6 Nov, 23.59</span>
+</p>
+</div>
+<!-- Action Icon Button -->
+<button aria-label="Detail Tugas" class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-brand-navy hover:bg-slate-200 transition-colors">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<!-- Progress Bar Section -->
+<div class="mt-3">
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<!-- 12/35 = 34.2% -->
+<div class="bg-brand-ocean h-full rounded-full transition-all duration-500" style="width: 34.2%;"></div>
+</div>
+<div class="flex items-center justify-between mt-1.5">
+<span class="text-[11px] text-brand-subtle font-medium">12 dari 35 sudah mengumpulkan</span>
+<span class="text-[11px] font-bold text-brand-ocean">34%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SectionAssignments -->
+</main>
+<!-- END: MainContentScrollableArea -->
+<!-- BEGIN: TeacherBottomNavigation -->
+<!-- 5 items bottom nav adhering directly to Flutter Material 3 style -->
+<nav class="absolute bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-brand-cardBorder px-3 pt-2 pb-5 z-40 shadow-nav flex justify-around items-center" data-purpose="teacher-bottom-navbar">
+<!-- Nav Item 1: Beranda (Active) -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 group" href="#">
+<div class="relative">
+<svg class="w-5 h-5 text-brand-coral fill-current transition-transform group-hover:scale-110" viewbox="0 0 24 24">
+<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+</svg>
+</div>
+<span class="text-[10px] font-bold text-brand-coral mt-1">Beranda</span>
+<div class="w-1 h-1 bg-brand-coral rounded-full mt-0.5"></div>
+</a>
+<!-- Nav Item 2: Jadwal -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 group" href="#">
+<svg class="w-5 h-5 text-brand-subtle group-hover:text-brand-coral fill-current transition-colors" viewbox="0 0 24 24">
+<path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"></path>
+</svg>
+<span class="text-[10px] font-medium text-brand-subtle group-hover:text-brand-coral mt-1 transition-colors">Jadwal</span>
+<div class="w-1 h-1 bg-transparent rounded-full mt-0.5"></div>
+</a>
+<!-- Nav Item 3: Pembelajaran -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 group" href="#">
+<svg class="w-5 h-5 text-brand-subtle group-hover:text-brand-coral fill-current transition-colors" viewbox="0 0 24 24">
+<path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+</svg>
+<span class="text-[10px] font-medium text-brand-subtle group-hover:text-brand-coral mt-1 transition-colors">Belajar</span>
+<div class="w-1 h-1 bg-transparent rounded-full mt-0.5"></div>
+</a>
+<!-- Nav Item 4: Nilai & Absensi -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 group" href="#">
+<svg class="w-5 h-5 text-brand-subtle group-hover:text-brand-coral fill-current transition-colors" viewbox="0 0 24 24">
+<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path>
+</svg>
+<span class="text-[10px] font-medium text-brand-subtle group-hover:text-brand-coral mt-1 transition-colors">Nilai</span>
+<div class="w-1 h-1 bg-transparent rounded-full mt-0.5"></div>
+</a>
+<!-- Nav Item 5: Akun -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 group" href="#">
+<svg class="w-5 h-5 text-brand-subtle group-hover:text-brand-coral fill-current transition-colors" viewbox="0 0 24 24">
+<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+</svg>
+<span class="text-[10px] font-medium text-brand-subtle group-hover:text-brand-coral mt-1 transition-colors">Akun</span>
+<div class="w-1 h-1 bg-transparent rounded-full mt-0.5"></div>
+</a>
+</nav>
+<!-- END: TeacherBottomNavigation -->
+<!-- BEGIN: HomeIndicator -->
+<!-- iOS standard home indicator line centered at bottom -->
+<div class="absolute bottom-1.5 inset-x-0 flex justify-center z-50 pointer-events-none">
+<div class="w-32 h-1 bg-brand-navy/60 rounded-full"></div>
+</div>
+<!-- END: HomeIndicator -->
+</div>
+<!-- END: PhoneShellContainer -->
+</body></html>

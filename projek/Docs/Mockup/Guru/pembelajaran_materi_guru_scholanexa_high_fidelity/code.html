@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScholaNexa - Dashboard Guru</title>
+<!-- Tailwind CSS CDN with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              coral: '#FF7F50',
+              yellow: '#FFD166',
+              mint: '#06D6A0',
+              blue: '#118AB2',
+            },
+            surface: {
+              DEFAULT: '#FFFFFF',
+              bg: '#F7F9FC',
+            },
+            content: {
+              primary: '#191C1F',
+              secondary: '#626B78',
+              border: '#E5E9F0',
+              navy: '#172033',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll-and-resets">
+    /* Hide scrollbars for clean native mobile presentation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-0 md:p-6 font-sans antialiased text-content-primary selection:bg-brand-coral/20">
+<!-- BEGIN: DeviceFrameWrapper -->
+<!-- Outer Smartphone iOS Chassis (390px x 844px visual standard) -->
+<div class="relative w-[390px] h-[844px] bg-surface-bg rounded-[50px] shadow-2xl border-[10px] border-content-navy flex flex-col overflow-hidden ring-1 ring-black/10 select-none">
+<!-- BEGIN: DeviceStatusAndIslandBar -->
+<!-- Top Notch & Dynamic Island Container -->
+<header class="relative w-full pt-3 px-7 z-40 bg-surface-bg flex items-center justify-between shrink-0">
+<!-- iOS Time -->
+<span class="text-[14px] font-semibold tracking-tight text-content-primary">09:41</span>
+<!-- Dynamic Island cutout -->
+<div aria-hidden="true" class="absolute left-1/2 -translate-x-1/2 top-2.5 w-[116px] h-[28px] bg-black rounded-full flex items-center justify-end pr-3 gap-1.5 shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-700/60"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-blue-950/80 ring-1 ring-blue-900/40"></div>
+</div>
+<!-- iOS Status Bar Icons (Signal, Wifi, Battery) -->
+<div aria-label="Status Sinyal dan Baterai" class="flex items-center space-x-1.5 text-content-primary">
+<!-- Cellular Signal -->
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9zm0 2c3.87 0 7 3.13 7 7 0 1.54-.5 2.97-1.35 4.14L12 19.68l-5.65-3.54C5.5 14.97 5 13.54 5 12c0-3.87 3.13-7 7-7z" opacity="0.1"></path>
+<rect height="6" rx="0.8" width="3" x="3" y="14"></rect>
+<rect height="9" rx="0.8" width="3" x="8" y="11"></rect>
+<rect height="12" rx="0.8" width="3" x="13" y="8"></rect>
+<rect height="15" rx="0.8" width="3" x="18" y="5"></rect>
+</svg>
+<!-- Wifi -->
+<svg class="w-4 h-4 stroke-current fill-none stroke-2 stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+<path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+<path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+<circle cx="12" cy="20" fill="currentColor" r="1"></circle>
+</svg>
+<!-- Battery -->
+<div class="flex items-center">
+<div class="w-5 h-2.5 border border-content-primary rounded-[3px] p-0.5 flex items-center">
+<div class="h-full w-full bg-content-primary rounded-[1px]"></div>
+</div>
+<div class="w-0.5 h-1 bg-content-primary rounded-r-[1px] ml-[0.5px]"></div>
+</div>
+</div>
+</header>
+<!-- END: DeviceStatusAndIslandBar -->
+<!-- BEGIN: TopAppBar -->
+<section class="w-full px-5 pt-3 pb-2 flex items-center justify-between shrink-0 bg-surface-bg z-20">
+<!-- Back Navigation Button -->
+<button aria-label="Kembali" class="w-10 h-10 rounded-xl bg-surface border border-content-border flex items-center justify-center text-content-primary active:scale-95 transition-transform shadow-xs" type="button">
+<svg class="w-5 h-5 stroke-current fill-none stroke-[2.2] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M15 18l-6-6 6-6"></path>
+</svg>
+</button>
+<!-- App Bar Title -->
+<h1 class="text-[20px] font-bold text-content-primary tracking-tight">Pembelajaran</h1>
+<!-- Top Right Action (Options/More Button) -->
+<button aria-label="Menu Opsi" class="w-10 h-10 rounded-xl bg-surface border border-content-border flex items-center justify-center text-content-primary active:scale-95 transition-transform shadow-xs" type="button">
+<svg class="w-5 h-5 stroke-current fill-none stroke-[2.2] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="8"></circle>
+</svg>
+</button>
+</section>
+<!-- END: TopAppBar -->
+<!-- BEGIN: NavigationTabs -->
+<!-- Internal 3 Tabs: Materi, Tugas, Bank Soal -->
+<nav aria-label="Tab Pembelajaran" class="w-full px-5 pt-2 pb-1 shrink-0 bg-surface-bg border-b border-content-border/60 z-20">
+<div class="flex items-center justify-between">
+<!-- Tab 1: Active Materi -->
+<button class="relative pb-2.5 font-semibold text-brand-coral text-[15px] px-2 flex flex-col items-center" type="button">
+<span>Materi</span>
+<!-- Active underline indicator -->
+<span class="absolute bottom-0 inset-x-0 h-[2.5px] bg-brand-coral rounded-full"></span>
+</button>
+<!-- Tab 2: Tugas -->
+<button class="pb-2.5 font-medium text-content-secondary hover:text-content-primary text-[15px] px-2" type="button">
+<span>Tugas</span>
+</button>
+<!-- Tab 3: Bank Soal -->
+<button class="pb-2.5 font-medium text-content-secondary hover:text-content-primary text-[15px] px-2" type="button">
+<span>Bank Soal</span>
+</button>
+</div>
+</nav>
+<!-- END: NavigationTabs -->
+<!-- BEGIN: MainContentArea -->
+<!-- Scrollable container for Search, Cards, and layout spacing -->
+<main class="flex-1 overflow-y-auto px-5 pt-3.5 pb-24 no-scrollbar space-y-3.5">
+<!-- BEGIN: SearchAndFilterBar -->
+<div class="flex items-center gap-2.5" data-purpose="search-and-filter">
+<!-- Search Input Field -->
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-content-secondary">
+<svg class="w-4 h-4 stroke-current fill-none stroke-2 stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="M21 21l-4.35-4.35"></path>
+</svg>
+</div>
+<input class="w-full h-11 pl-10 pr-3.5 bg-surface text-[14px] text-content-primary placeholder:text-content-secondary/70 border border-content-border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-coral/30 focus:border-brand-coral shadow-xs" placeholder="Cari materi atau topik..." type="search"/>
+</div>
+<!-- Filter/Tune Button -->
+<button aria-label="Filter dan Urutkan" class="w-11 h-11 bg-surface border border-content-border rounded-xl flex items-center justify-center text-content-secondary hover:text-content-primary active:scale-95 transition-transform shadow-xs shrink-0" type="button">
+<svg class="w-5 h-5 stroke-current fill-none stroke-[2] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<line x1="4" x2="20" y1="8" y2="8"></line>
+<line x1="4" x2="20" y1="16" y2="16"></line>
+</svg>
+</button>
+</div>
+<!-- END: SearchAndFilterBar -->
+<!-- BEGIN: MaterialCardList -->
+<!-- Card 1: Turunan dan Integral -->
+<article class="bg-surface rounded-2xl border border-content-border p-3.5 shadow-sm hover:border-brand-coral/40 transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Icon box with peach tone -->
+<div class="w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0 text-brand-coral">
+<svg class="w-6 h-6 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+</svg>
+</div>
+<!-- Text details -->
+<div class="min-w-0">
+<h2 class="text-[15px] font-semibold text-content-primary truncate leading-snug">Turunan dan Integral</h2>
+<p class="text-[12px] text-content-secondary font-medium mt-0.5">Matematika • 2 Nov 2026</p>
+</div>
+</div>
+<!-- Action buttons: Edit & Delete -->
+<div class="flex items-center gap-1.5 shrink-0">
+<button aria-label="Edit materi Turunan dan Integral" class="w-8 h-8 rounded-lg border border-content-border flex items-center justify-center text-content-secondary hover:text-brand-blue hover:border-brand-blue/30 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M12 20h9"></path>
+<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+</svg>
+</button>
+<button aria-label="Hapus materi Turunan dan Integral" class="w-8 h-8 rounded-lg border border-content-border flex items-center justify-center text-content-secondary hover:text-rose-500 hover:border-rose-200 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<polyline points="3 6 5 6 21 6"></polyline>
+<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+</svg>
+</button>
+</div>
+</article>
+<!-- Card 2: Limit Fungsi -->
+<article class="bg-surface rounded-2xl border border-content-border p-3.5 shadow-sm hover:border-brand-coral/40 transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Icon box with blue tone -->
+<div class="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center shrink-0 text-brand-blue">
+<svg class="w-6 h-6 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+<polyline points="10 9 9 9 8 9"></polyline>
+</svg>
+</div>
+<!-- Text details -->
+<div class="min-w-0">
+<h2 class="text-[15px] font-semibold text-content-primary truncate leading-snug">Limit Fungsi</h2>
+<p class="text-[12px] text-content-secondary font-medium mt-0.5">Matematika • 26 Okt 2026</p>
+</div>
+</div>
+<!-- Action buttons: Edit & Delete -->
+<div class="flex items-center gap-1.5 shrink-0">
+<button aria-label="Edit materi Limit Fungsi" class="w-8 h-8 rounded-lg border border-content-border flex items-center justify-center text-content-secondary hover:text-brand-blue hover:border-brand-blue/30 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M12 20h9"></path>
+<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+</svg>
+</button>
+<button aria-label="Hapus materi Limit Fungsi" class="w-8 h-8 rounded-lg border border-content-border flex items-center justify-center text-content-secondary hover:text-rose-500 hover:border-rose-200 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<polyline points="3 6 5 6 21 6"></polyline>
+<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+</svg>
+</button>
+</div>
+</article>
+<!-- Card 3: Barisan dan Deret -->
+<article class="bg-surface rounded-2xl border border-content-border p-3.5 shadow-sm hover:border-brand-coral/40 transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Icon box with mint tone -->
+<div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-brand-mint">
+<svg class="w-6 h-6 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+</svg>
+</div>
+<!-- Text details -->
+<div class="min-w-0">
+<h2 class="text-[15px] font-semibold text-content-primary truncate leading-snug">Barisan dan Deret</h2>
+<p class="text-[12px] text-content-secondary font-medium mt-0.5">Matematika • 19 Okt 2026</p>
+</div>
+</div>
+<!-- Action buttons: Edit & Delete -->
+<div class="flex items-center gap-1.5 shrink-0">
+<button aria-label="Edit materi Barisan dan Deret" class="w-8 h-8 rounded-lg border border-content-border flex items-center justify-center text-content-secondary hover:text-brand-blue hover:border-brand-blue/30 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M12 20h9"></path>
+<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+</svg>
+</button>
+<button aria-label="Hapus materi Barisan dan Deret" class="w-8 h-8 rounded-lg border border-content-border flex items-center justify-center text-content-secondary hover:text-rose-500 hover:border-rose-200 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<polyline points="3 6 5 6 21 6"></polyline>
+<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+</svg>
+</button>
+</div>
+</article>
+<!-- Card 4: Trigonometri Dasar -->
+<article class="bg-surface rounded-2xl border border-content-border p-3.5 shadow-sm hover:border-brand-coral/40 transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Icon box with peach tone -->
+<div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center shrink-0 text-amber-500">
+<svg class="w-6 h-6 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<!-- Text details -->
+<div class="min-w-0">
+<h2 class="text-[15px] font-semibold text-content-primary truncate leading-snug">Trigonometri Dasar</h2>
+<p class="text-[12px] text-content-secondary font-medium mt-0.5">Matematika • 12 Okt 2026</p>
+</div>
+</div>
+<!-- Action buttons: Edit & Delete -->
+<div class="flex items-center gap-1.5 shrink-0">
+<button aria-label="Edit materi Trigonometri Dasar" class="w-8 h-8 rounded-lg border border-content-border flex items-center justify-center text-content-secondary hover:text-brand-blue hover:border-brand-blue/30 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M12 20h9"></path>
+<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+</svg>
+</button>
+<button aria-label="Hapus materi Trigonometri Dasar" class="w-8 h-8 rounded-lg border border-content-border flex items-center justify-center text-content-secondary hover:text-rose-500 hover:border-rose-200 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-current fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<polyline points="3 6 5 6 21 6"></polyline>
+<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+</svg>
+</button>
+</div>
+</article>
+<!-- END: MaterialCardList -->
+</main>
+<!-- END: MainContentArea -->
+<!-- BEGIN: FloatingActionButton -->
+<!-- Positioned precisely bottom-right just above the navigation bar -->
+<div class="absolute right-5 bottom-[84px] z-30">
+<button aria-label="Tambah Materi Baru" class="w-14 h-14 rounded-full bg-content-navy text-white flex items-center justify-center shadow-xl shadow-content-navy/30 active:scale-90 hover:bg-black transition-transform" type="button">
+<svg class="w-7 h-7 stroke-current fill-none stroke-[2.4] stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+</button>
+</div>
+<!-- END: FloatingActionButton -->
+<!-- BEGIN: BottomNavigation -->
+<!-- 5 Items: Beranda, Jadwal, Pembelajaran (active), Nilai & Absensi, Akun -->
+<nav aria-label="Navigasi Utama" class="absolute bottom-0 inset-x-0 bg-surface border-t border-content-border z-20 px-2 pt-2 pb-5 flex flex-col items-center">
+<div class="w-full grid grid-cols-5 items-center text-center">
+<!-- Nav 1: Beranda -->
+<a class="flex flex-col items-center gap-1 py-1 text-content-secondary hover:text-content-primary transition-colors" href="#beranda">
+<svg class="w-5 h-5 stroke-current fill-none stroke-2 stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="text-[10px] font-medium tracking-tight">Beranda</span>
+</a>
+<!-- Nav 2: Jadwal -->
+<a class="flex flex-col items-center gap-1 py-1 text-content-secondary hover:text-content-primary transition-colors" href="#jadwal">
+<svg class="w-5 h-5 stroke-current fill-none stroke-2 stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+<span class="text-[10px] font-medium tracking-tight">Jadwal</span>
+</a>
+<!-- Nav 3: Pembelajaran (ACTIVE) -->
+<a aria-current="page" class="flex flex-col items-center gap-1 py-1 text-brand-coral" href="#pembelajaran">
+<div class="relative flex flex-col items-center">
+<svg class="w-5 h-5 stroke-current fill-none stroke-2 stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+<path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+</svg>
+</div>
+<span class="text-[10px] font-bold tracking-tight">Pembelajaran</span>
+<!-- Active Pill/Dot underneath -->
+<div class="w-1.5 h-1.5 rounded-full bg-brand-coral -mt-0.5"></div>
+</a>
+<!-- Nav 4: Nilai & Absensi -->
+<a class="flex flex-col items-center gap-1 py-1 text-content-secondary hover:text-content-primary transition-colors" href="#nilai">
+<svg class="w-5 h-5 stroke-current fill-none stroke-2 stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M9 11l3 3L22 4"></path>
+<path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+</svg>
+<span class="text-[10px] font-medium tracking-tight truncate max-w-full px-0.5">Nilai</span>
+</a>
+<!-- Nav 5: Akun -->
+<a class="flex flex-col items-center gap-1 py-1 text-content-secondary hover:text-content-primary transition-colors" href="#akun">
+<svg class="w-5 h-5 stroke-current fill-none stroke-2 stroke-linecap-round stroke-linejoin-round" viewbox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+<span class="text-[10px] font-medium tracking-tight">Akun</span>
+</a>
+</div>
+<!-- iOS Home Indicator bar -->
+<div aria-hidden="true" class="w-32 h-1 bg-slate-900/80 rounded-full mt-2.5"></div>
+</nav>
+<!-- END: BottomNavigation -->
+</div>
+<!-- END: DeviceFrameWrapper -->
+</body></html>

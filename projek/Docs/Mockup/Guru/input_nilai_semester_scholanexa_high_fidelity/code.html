@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScholaNexa - Input Nilai Semester</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              coral: '#FF7F50',
+              coralHover: '#e06b3e',
+              mint: '#06D6A0',
+              mintBg: '#E6FAF5',
+              navy: '#172033',
+              yellow: '#FFD166',
+              blue: '#118AB2',
+              bgLight: '#F7F9FC',
+              border: '#E5E9F0',
+              textPrimary: '#191C1F',
+              textSecondary: '#626B78'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 2px 8px -2px rgba(23, 32, 51, 0.05), 0 1px 3px -1px rgba(23, 32, 51, 0.03)',
+            'btn': '0 4px 14px 0 rgba(255, 127, 80, 0.35)',
+            'phone': '0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 12px #172033'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ECEFF4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px 0;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body>
+<!-- BEGIN: PhoneContainer -->
+<!-- iPhone Form Factor 390px x 844px with iOS Bezel -->
+<main class="w-[390px] h-[844px] bg-brand-bgLight rounded-[48px] shadow-phone relative flex flex-col overflow-hidden select-none border-[4px] border-[#2A3447]">
+<!-- BEGIN: StatusBar -->
+<header class="w-full pt-3 px-7 flex justify-between items-center z-30 shrink-0 select-none">
+<!-- Time -->
+<span class="text-[14px] font-semibold text-brand-textPrimary tracking-tight">09:41</span>
+<!-- Dynamic Island Simulation -->
+<div class="w-28 h-[24px] bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-2 flex items-center justify-end px-2.5 space-x-1.5 pointer-events-none">
+<div class="w-2.5 h-2.5 rounded-full bg-[#1A1A1A] ring-1 ring-[#333]"></div>
+<div class="w-2 h-2 rounded-full bg-[#08221b]"></div>
+</div>
+<!-- Indicators -->
+<div class="flex items-center space-x-1.5 text-brand-textPrimary">
+<span class="material-symbols-outlined text-[16px] font-bold">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[16px] font-bold">wifi</span>
+<span class="material-symbols-outlined text-[18px] font-bold">battery_full</span>
+</div>
+</header>
+<!-- END: StatusBar -->
+<!-- BEGIN: TopBar -->
+<section class="px-5 pt-3 pb-2 flex items-center justify-between shrink-0" data-purpose="top-navigation">
+<!-- Back Navigation Button -->
+<button aria-label="Kembali" class="w-9 h-9 rounded-xl bg-white border border-brand-border flex items-center justify-center text-brand-textPrimary shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<!-- App Header Title -->
+<h1 class="text-[17px] font-bold text-brand-textPrimary tracking-tight">Input Nilai Semester</h1>
+<!-- Profile Avatar Button -->
+<button aria-label="Profil Pengguna" class="w-9 h-9 rounded-full bg-brand-navy flex items-center justify-center text-white shadow-sm ring-2 ring-white" type="button">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</button>
+</section>
+<!-- END: TopBar -->
+<!-- BEGIN: FormContentScrollableArea -->
+<div class="flex-1 overflow-y-auto px-5 py-2.5 space-y-4">
+<!-- BEGIN: StudentProfileCard -->
+<section class="bg-white rounded-2xl p-4 border border-brand-border shadow-card flex items-center justify-between" data-purpose="student-info-card">
+<div class="flex items-center space-x-3.5">
+<!-- Student Avatar Initials -->
+<div class="w-12 h-12 rounded-full bg-orange-100 border border-orange-200 text-brand-coral flex items-center justify-center font-bold text-base shrink-0 shadow-inner">
+            RP
+          </div>
+<!-- Student Details -->
+<div>
+<div class="flex items-center space-x-1.5">
+<h2 class="text-[15px] font-bold text-brand-textPrimary leading-snug">Rizky Pratama</h2>
+</div>
+<p class="text-[12px] font-medium text-brand-textSecondary mt-0.5">NIS: 20240107</p>
+<div class="flex items-center mt-1 text-[11px] font-medium text-brand-blue bg-blue-50 px-2 py-0.5 rounded-md inline-flex border border-blue-100">
+<span class="material-symbols-outlined text-[13px] mr-1">school</span>
+              XII IPA 2 • Matematika
+            </div>
+</div>
+</div>
+<!-- Semester Tag -->
+<span class="text-[11px] font-semibold text-brand-coral bg-orange-50 border border-orange-200 px-2 py-1 rounded-lg shrink-0">
+          Ganjil 24/25
+        </span>
+</section>
+<!-- END: StudentProfileCard -->
+<!-- BEGIN: FieldNilaiSemester -->
+<section class="space-y-1.5" data-purpose="grade-input-container">
+<label class="block text-[13px] font-semibold text-brand-textPrimary" for="grade-input">
+          Nilai Semester (0–100)
+        </label>
+<div class="relative flex items-center">
+<input class="w-full bg-white border border-brand-border rounded-xl py-3 px-4 text-brand-textPrimary font-bold text-[18px] focus:outline-none focus:ring-2 focus:ring-brand-coral focus:border-brand-coral shadow-sm transition-all pr-16" id="grade-input" max="100" min="0" type="number" value="88"/>
+<span class="absolute right-4 text-[13px] font-semibold text-brand-textSecondary bg-gray-100 px-2 py-0.5 rounded border border-gray-200">
+            / 100
+          </span>
+</div>
+</section>
+<!-- END: FieldNilaiSemester -->
+<!-- BEGIN: FieldStatusKelulusan -->
+<section class="space-y-1.5" data-purpose="graduation-status-selector">
+<label class="block text-[13px] font-semibold text-brand-textPrimary">
+          Status Kelulusan
+        </label>
+<!-- 2-segment Button / Selector -->
+<div class="grid grid-cols-2 gap-2.5 p-1 bg-white border border-brand-border rounded-xl shadow-card" role="radiogroup">
+<!-- Segment 1: Lulus (Active) -->
+<button aria-checked="true" class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-lg bg-brand-mint text-white font-semibold text-[13px] shadow-sm transition-all" role="radio" type="button">
+<span class="material-symbols-outlined text-[17px] font-bold">check_circle</span>
+<span>Lulus</span>
+</button>
+<!-- Segment 2: Tidak Lulus (Inactive) -->
+<button aria-checked="false" class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-lg text-brand-textSecondary hover:bg-gray-50 font-medium text-[13px] transition-colors" role="radio" type="button">
+<span class="material-symbols-outlined text-[17px]">cancel</span>
+<span>Tidak Lulus</span>
+</button>
+</div>
+</section>
+<!-- END: FieldStatusKelulusan -->
+<!-- BEGIN: FieldCatatanGuru -->
+<section class="space-y-1.5" data-purpose="teacher-note-container">
+<div class="flex justify-between items-center">
+<label class="block text-[13px] font-semibold text-brand-textPrimary" for="teacher-notes">
+            Catatan Guru
+          </label>
+<span class="text-[11px] text-brand-textSecondary">Opsional</span>
+</div>
+<div class="relative">
+<textarea class="w-full bg-white border border-brand-border rounded-xl p-3.5 text-[13px] leading-relaxed text-brand-textPrimary font-normal focus:outline-none focus:ring-2 focus:ring-brand-coral focus:border-brand-coral shadow-sm resize-none transition-all placeholder:text-gray-400" id="teacher-notes" placeholder="Tuliskan catatan evaluasi siswa..." rows="4">Rizky aktif di kelas dan cepat memahami materi. Tingkatkan ketelitian saat menghitung.</textarea>
+</div>
+</section>
+<!-- END: FieldCatatanGuru -->
+</div>
+<!-- END: FormContentScrollableArea -->
+<!-- BEGIN: BottomActionSection -->
+<footer class="p-5 pt-2 bg-gradient-to-t from-brand-bgLight via-brand-bgLight to-transparent shrink-0 space-y-3.5 z-20">
+<!-- Primary Submit Button -->
+<button class="w-full py-3.5 px-4 bg-brand-coral hover:bg-brand-coralHover text-white rounded-xl font-semibold text-[15px] flex items-center justify-center space-x-2 shadow-btn active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold">check</span>
+<span>Simpan Nilai</span>
+</button>
+<!-- Secondary Action: Riwayat Link -->
+<div class="flex justify-center pb-1">
+<button class="inline-flex items-center space-x-1.5 text-brand-textSecondary hover:text-brand-textPrimary transition-colors py-1 px-2 group" type="button">
+<span class="material-symbols-outlined text-[16px] text-brand-textSecondary group-hover:text-brand-textPrimary">history</span>
+<span class="text-[12px] font-medium">Lihat Riwayat Perubahan</span>
+</button>
+</div>
+<!-- iOS Home Bar Indicator -->
+<div class="w-32 h-1 bg-brand-navy/30 rounded-full mx-auto mt-2"></div>
+</footer>
+<!-- END: BottomActionSection -->
+</main>
+<!-- END: PhoneContainer -->
+</body></html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScholaNexa - Buat Tugas</title>
+<!-- Inter Google Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            coral: {
+              DEFAULT: '#FF7F50',
+              hover: '#f06e3f',
+            },
+            schoolYellow: '#FFD166',
+            schoolMint: '#06D6A0',
+            schoolNavy: '#172033',
+            surfaceBg: '#F7F9FC',
+            textMain: '#191C1F',
+            textMuted: '#626B78',
+            fieldBorder: '#E5E9F0',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Scrollbars and Phone Mockup -->
+<style data-purpose="custom-styling">
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    /* Hide scrollbars in form container for clean mobile presentation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-200 min-h-screen flex items-center justify-center p-2 sm:p-6 select-none">
+<!-- BEGIN: PhoneFrameWrapper -->
+<!-- Outer hardware mockup mimicking modern iOS device with dimensions 390x844 -->
+<main class="relative w-[390px] h-[844px] bg-surfaceBg rounded-[48px] shadow-[0_25px_60px_-15px_rgba(23,32,51,0.35)] ring-[10px] ring-schoolNavy overflow-hidden flex flex-col justify-between border border-slate-700/20">
+<!-- BEGIN: DeviceStatusBar -->
+<header class="relative w-full pt-3 px-7 z-30 shrink-0 select-none">
+<!-- Dynamic Island pill cutout -->
+<div class="absolute left-1/2 -translate-x-1/2 top-2.5 w-[115px] h-[30px] bg-black rounded-full flex items-center justify-end pr-2.5 space-x-1.5 shadow-sm pointer-events-none">
+<div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800"></div>
+</div>
+<!-- Left and Right status indicators -->
+<div class="flex items-center justify-between h-7 text-xs font-semibold text-textMain tracking-tight">
+<span>09:41</span>
+<div class="flex items-center space-x-1.5">
+<!-- Cellular Network Indicator -->
+<span class="material-symbols-outlined text-[16px] text-textMain leading-none">signal_cellular_alt</span>
+<!-- Wi-Fi Indicator -->
+<span class="material-symbols-outlined text-[16px] text-textMain leading-none">wifi</span>
+<!-- Battery Pill -->
+<span class="material-symbols-outlined text-[19px] text-textMain leading-none">battery_full</span>
+</div>
+</div>
+</header>
+<!-- END: DeviceStatusBar -->
+<!-- BEGIN: TopAppBar -->
+<nav aria-label="Navigasi Halaman" class="px-5 pt-3 pb-2 flex items-center shrink-0 z-20">
+<button aria-label="Kembali ke halaman sebelumnya" class="w-10 h-10 rounded-xl bg-white border border-fieldBorder flex items-center justify-center text-textMain hover:bg-slate-50 transition-colors shadow-sm active:scale-95" type="button">
+<span class="material-symbols-outlined text-xl text-textMain font-medium">arrow_back_ios_new</span>
+</button>
+<h1 class="ml-3.5 text-xl font-bold text-textMain tracking-tight">Buat Tugas</h1>
+</nav>
+<!-- END: TopAppBar -->
+<!-- BEGIN: FormContentScrollArea -->
+<section class="flex-1 overflow-y-auto no-scrollbar px-5 pt-2 pb-3 space-y-4">
+<!-- Field 1: Judul Tugas -->
+<div class="space-y-1.5">
+<label class="block text-sm font-semibold text-textMain" for="judul-tugas">
+          Judul Tugas
+        </label>
+<div class="relative">
+<input class="w-full rounded-xl border border-fieldBorder bg-white px-3.5 py-2.5 text-sm font-medium text-textMain placeholder:text-textMuted/60 focus:border-coral focus:ring-1 focus:ring-coral transition-all outline-none shadow-xs" id="judul-tugas" name="judulTugas" placeholder="Contoh: Latihan Soal Integral" type="text" value="Latihan Soal Integral"/>
+</div>
+</div>
+<!-- Field 2: Mata Pelajaran (Dropdown) -->
+<div class="space-y-1.5">
+<label class="block text-sm font-semibold text-textMain" for="mata-pelajaran">
+          Mata Pelajaran
+        </label>
+<div class="relative">
+<select class="w-full appearance-none rounded-xl border border-fieldBorder bg-white px-3.5 py-2.5 pr-10 text-sm font-medium text-textMain focus:border-coral focus:ring-1 focus:ring-coral outline-none shadow-xs cursor-pointer" id="mata-pelajaran" name="mataPelajaran">
+<option selected="" value="matematika">Matematika</option>
+<option value="fisika">Fisika</option>
+<option value="kimia">Kimia</option>
+<option value="biologi">Biologi</option>
+<option value="bahasa_indonesia">Bahasa Indonesia</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-textMuted text-xl">
+            keyboard_arrow_down
+          </span>
+</div>
+</div>
+<!-- Field 3: Kelas (Dropdown) -->
+<div class="space-y-1.5">
+<label class="block text-sm font-semibold text-textMain" for="pilih-kelas">
+          Kelas
+        </label>
+<div class="relative">
+<select class="w-full appearance-none rounded-xl border border-fieldBorder bg-white px-3.5 py-2.5 pr-10 text-sm font-medium text-textMain focus:border-coral focus:ring-1 focus:ring-coral outline-none shadow-xs cursor-pointer" id="pilih-kelas" name="kelas">
+<option selected="" value="xii-ipa-2">XII IPA 2</option>
+<option value="xii-ipa-1">XII IPA 1</option>
+<option value="xii-ips-1">XII IPS 1</option>
+<option value="xi-ipa-1">XI IPA 1</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-textMuted text-xl">
+            keyboard_arrow_down
+          </span>
+</div>
+</div>
+<!-- Field 4: Deskripsi -->
+<div class="space-y-1.5">
+<label class="block text-sm font-semibold text-textMain" for="deskripsi-tugas">
+          Deskripsi
+        </label>
+<textarea class="w-full rounded-xl border border-fieldBorder bg-white px-3.5 py-2.5 text-sm font-medium text-textMain placeholder:text-textMuted/60 focus:border-coral focus:ring-1 focus:ring-coral transition-all outline-none resize-none shadow-xs" id="deskripsi-tugas" placeholder="Tulis instruksi pengerjaan..." rows="3">Kerjakan latihan soal Bab 4 halaman 82 nomor 1 sampai 10. Tuliskan cara pengerjaan lengkap di buku catatan matematika.</textarea>
+</div>
+<!-- Field 5 & 6: Tanggal & Jam Deadline (2-Column Grid) -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Tanggal Deadline -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-textMain" for="tanggal-deadline">
+            Tanggal Deadline
+          </label>
+<div class="flex items-center justify-between rounded-xl border border-fieldBorder bg-white px-3 py-2.5 shadow-xs hover:border-coral/60 cursor-pointer">
+<span class="text-xs font-medium text-textMain" id="tanggal-deadline">2 Nov 2026</span>
+<span class="material-symbols-outlined text-[18px] text-coral shrink-0 ml-1">
+              calendar_month
+            </span>
+</div>
+</div>
+<!-- Jam Deadline -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-textMain" for="jam-deadline">
+            Jam Deadline
+          </label>
+<div class="flex items-center justify-between rounded-xl border border-fieldBorder bg-white px-3 py-2.5 shadow-xs hover:border-coral/60 cursor-pointer">
+<span class="text-xs font-medium text-textMain" id="jam-deadline">23.59</span>
+<span class="material-symbols-outlined text-[18px] text-coral shrink-0 ml-1">
+              schedule
+            </span>
+</div>
+</div>
+</div>
+<!-- Field 7: Dashed File Upload Area -->
+<div aria-label="Unggah file tugas" class="border-2 border-dashed border-[#CBD5E1] bg-white/70 hover:bg-white rounded-2xl p-4 flex flex-col items-center justify-center text-center transition-all cursor-pointer group hover:border-coral" role="button" tabindex="0">
+<!-- Circular icon badge with coral orange accent -->
+<div class="w-10 h-10 rounded-full bg-coral/10 text-coral flex items-center justify-center group-hover:bg-coral group-hover:text-white transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl leading-none">add</span>
+</div>
+<p class="font-semibold text-xs text-textMain mt-2">
+          Lampirkan file soal <span class="font-normal text-textMuted">(opsional)</span>
+</p>
+<p class="text-[11px] text-textMuted mt-0.5">
+          PDF, DOCX, JPG, atau ZIP • Maks. 10 MB
+        </p>
+</div>
+</section>
+<!-- END: FormContentScrollArea -->
+<!-- BEGIN: BottomActionButtons -->
+<footer class="px-5 pt-3 pb-2 bg-surfaceBg/95 backdrop-blur-sm border-t border-slate-200/60 shrink-0">
+<div class="flex items-center space-x-3">
+<!-- Outlined secondary button -->
+<button class="w-1/2 py-3 rounded-xl border border-[#CBD5E1] bg-white text-textMain font-semibold text-sm hover:bg-slate-50 active:bg-slate-100 transition-colors shadow-sm text-center" type="button">
+          Batal
+        </button>
+<!-- Primary coral button -->
+<button class="w-1/2 py-3 rounded-xl bg-coral text-white font-semibold text-sm hover:bg-coral-hover active:scale-[0.99] transition-all shadow-[0_4px_12px_rgba(255,127,80,0.35)] text-center" type="button">
+          Simpan
+        </button>
+</div>
+<!-- iOS Bottom Home Indicator Bar -->
+<div class="w-full flex justify-center pt-3 pb-1">
+<div class="w-32 h-1 bg-schoolNavy/70 rounded-full"></div>
+</div>
+</footer>
+<!-- END: BottomActionButtons -->
+</main>
+<!-- END: PhoneFrameWrapper -->
+</body></html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScholaNexa - Detail Pengumpulan &amp; Penilaian Tugas</title>
+<!-- Tailwind CSS CDN with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              coral: '#FF7F50',
+              yellow: '#FFD166',
+              mint: '#06D6A0',
+              ocean: '#118AB2',
+              navy: '#172033',
+            },
+            surface: {
+              bg: '#F7F9FC',
+              card: '#FFFFFF',
+              border: '#E5E9F0',
+            },
+            text: {
+              primary: '#191C1F',
+              secondary: '#626B78',
+            }
+          },
+          boxShadow: {
+            'card': '0 2px 8px -1px rgba(25, 28, 31, 0.05), 0 1px 3px -1px rgba(25, 28, 31, 0.03)',
+            'btn': '0 4px 14px 0 rgba(255, 127, 80, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for specific mock frame dimensions & resets -->
+<style data-purpose="mockup-frame">
+    body {
+      background-color: #0b0f19;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Device Frame Simulation (iPhone 14 / 15 standard aspect 390x844) */
+    .iphone-frame {
+      width: 390px;
+      height: 844px;
+      border-radius: 48px;
+      background-color: #F7F9FC;
+      box-shadow: 0 0 0 12px #1e2530, 0 25px 60px -12px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hide scrollbars for clean UI presentation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body>
+<!-- BEGIN: PhoneContainer -->
+<main class="iphone-frame" data-purpose="mobile-mockup-frame">
+<!-- BEGIN: StatusBar -->
+<header class="w-full pt-3 px-7 flex justify-between items-center z-30 select-none" data-purpose="ios-status-bar">
+<!-- Time -->
+<span class="text-[14px] font-semibold text-text-primary tracking-tight">09:41</span>
+<!-- Dynamic Island Mockup -->
+<div aria-hidden="true" class="w-28 h-[26px] bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-2.5 flex items-center justify-end pr-2.5 space-x-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-950"></span>
+</div>
+<!-- System Icons: Cellular, Wifi, Battery -->
+<div class="flex items-center space-x-1.5 text-text-primary">
+<!-- Cellular Signal -->
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.25A10.938 10.938 0 0 1 2 12C2 6.48 6.48 2 12 2c3.08 0 5.86 1.28 7.84 3.33l-.71.71C17.3 4.2 14.77 3 12 3zm0 4a5 5 0 0 0-5 5c0 1.25.46 2.39 1.23 3.27l.71-.71A3.988 3.988 0 0 1 8 12a4 4 0 0 1 4-4c1.1 0 2.1.45 2.83 1.17l.71-.71A4.978 4.978 0 0 0 12 7zm0 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
+<path d="M2 18h2v3H2zm4-3h2v6H6zm4-3h2v9h-2zm4-4h2v13h-2zm4-3h2v16h-2z"></path>
+</svg>
+<!-- Wifi -->
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0 0 12 4zm0 2.13c3.81 0 7.3 1.48 9.94 3.92L12 19.95 2.06 10.05C4.7 7.61 8.19 6.13 12 6.13z"></path>
+</svg>
+<!-- Battery -->
+<div class="flex items-center">
+<div class="w-5 h-2.5 border border-text-primary rounded-sm p-0.5 flex items-center">
+<div class="h-full w-full bg-text-primary rounded-2xs"></div>
+</div>
+<div class="w-0.5 h-1 bg-text-primary rounded-r-xs ml-px"></div>
+</div>
+</div>
+</header>
+<!-- END: StatusBar -->
+<!-- BEGIN: TopAppBar -->
+<nav class="w-full px-5 py-3.5 flex items-center justify-between" data-purpose="app-bar-navigation">
+<!-- Back Button -->
+<button aria-label="Kembali" class="w-10 h-10 rounded-xl bg-white border border-surface-border flex items-center justify-center text-text-primary hover:bg-slate-50 transition active:scale-95 shadow-sm" type="button">
+<svg class="w-5 h-5 text-text-primary" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Page Title -->
+<h1 class="text-base font-bold text-text-primary tracking-tight">Detail Pengumpulan</h1>
+<!-- Right Spacing Placeholder (Maintains center balance) -->
+<div aria-hidden="true" class="w-10 h-10"></div>
+</nav>
+<!-- END: TopAppBar -->
+<!-- BEGIN: ContentArea -->
+<div class="flex-1 overflow-y-auto px-5 pt-2 pb-6 space-y-4 no-scrollbar" data-purpose="main-screen-content">
+<!-- BEGIN: StudentProfileCard -->
+<section class="bg-surface-card rounded-2xl border border-surface-border p-4 shadow-card flex items-center justify-between" data-purpose="student-info-card">
+<div class="flex items-center space-x-3.5">
+<!-- Student Avatar -->
+<div class="w-12 h-12 rounded-full bg-orange-100/70 border border-orange-200/50 flex items-center justify-center text-brand-coral font-bold text-base tracking-wide">
+            RP
+          </div>
+<!-- Student Metadata -->
+<div>
+<h2 class="text-[15px] font-bold text-text-primary leading-snug">Rizky Pratama</h2>
+<p class="text-xs font-medium text-text-secondary mt-0.5">XII IPA 2 • Matematika</p>
+<div class="flex items-center text-[11px] text-text-secondary mt-1">
+<svg class="w-3.5 h-3.5 mr-1 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 6v6l4 2" stroke-linecap="round"></path>
+</svg>
+<span>Dikumpul 2 Nov 2026, 14.20</span>
+</div>
+</div>
+</div>
+<!-- Submission Status Badge -->
+<div class="self-start mt-0.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200/60">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            Dikumpul
+          </span>
+</div>
+</section>
+<!-- END: StudentProfileCard -->
+<!-- BEGIN: AttachmentCard -->
+<section class="bg-surface-card rounded-2xl border border-surface-border p-3.5 shadow-card flex items-center justify-between" data-purpose="submission-attachment">
+<div class="flex items-center space-x-3">
+<!-- PDF Document Icon -->
+<div class="w-11 h-11 rounded-xl bg-red-50 text-red-500 border border-red-100 flex items-center justify-center flex-shrink-0">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9.5 8.5c0 .83-.67 1.5-1.5 1.5H7v2H5.5V9H8c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V9H13c.83 0 1.5.67 1.5 1.5v3zm4-3H17v1h1.5V13H17v2h-1.5V9h3v1.5zM7 10.5h1v1H7v-1zm5.5 1.5H13v-2h-.5v2z"></path>
+</svg>
+</div>
+<!-- File Details -->
+<div class="overflow-hidden">
+<p class="text-sm font-semibold text-text-primary truncate">Jawaban_Rizky.pdf</p>
+<p class="text-[12px] text-text-secondary mt-0.5">850 KB</p>
+</div>
+</div>
+<!-- Download Action Button -->
+<button class="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg border border-surface-border text-text-primary hover:bg-slate-50 transition active:scale-95 text-xs font-semibold flex-shrink-0" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Unduh</span>
+</button>
+</section>
+<!-- END: AttachmentCard -->
+<!-- BEGIN: GradingForm -->
+<form class="space-y-4 pt-1" data-purpose="teacher-grading-form" onsubmit="event.preventDefault();">
+<!-- Grade / Score Input -->
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-text-primary" for="student-score">
+            Nilai (0–100)
+          </label>
+<div class="relative w-36">
+<input class="w-full rounded-xl border-surface-border bg-white px-3.5 py-2.5 text-lg font-bold text-text-primary shadow-sm focus:border-brand-coral focus:ring-1 focus:ring-brand-coral outline-none" id="student-score" max="100" min="0" type="number" value="88"/>
+<span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-medium text-text-secondary">/ 100</span>
+</div>
+</div>
+<!-- Feedback & Notes Textarea -->
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-text-primary" for="teacher-feedback">
+            Catatan untuk Siswa
+          </label>
+<div class="relative">
+<textarea class="w-full rounded-xl border-surface-border bg-white p-3.5 text-sm text-text-primary placeholder-slate-400 shadow-sm focus:border-brand-coral focus:ring-1 focus:ring-brand-coral leading-relaxed resize-none outline-none" id="teacher-feedback" placeholder="Berikan umpan balik atau apresiasi hasil kerja siswa..." rows="4">Langkah pengerjaan sudah benar. Perhatikan lagi penulisan konstanta integrasi pada soal nomor 7.</textarea>
+</div>
+</div>
+</form>
+<!-- END: GradingForm -->
+</div>
+<!-- END: ContentArea -->
+<!-- BEGIN: BottomActionBar -->
+<footer class="p-5 pt-2 bg-gradient-to-t from-surface-bg via-surface-bg to-transparent" data-purpose="bottom-action-container">
+<!-- Save Grade Button -->
+<button class="w-full py-3.5 px-4 rounded-xl bg-brand-coral hover:bg-[#ff6f3d] active:scale-[0.99] text-white font-semibold text-[15px] shadow-btn flex items-center justify-center space-x-2 transition duration-150" type="button">
+<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Simpan Nilai</span>
+</button>
+<!-- Home Indicator Bar -->
+<div aria-hidden="true" class="w-32 h-1 bg-slate-900/80 rounded-full mx-auto mt-4 mb-0.5"></div>
+</footer>
+<!-- END: BottomActionBar -->
+</main>
+<!-- END: PhoneContainer -->
+</body></html>
