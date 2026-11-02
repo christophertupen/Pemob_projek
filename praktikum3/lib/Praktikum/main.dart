@@ -146,6 +146,21 @@ class _FormPageState extends State<FormPage> {
               ],
               onChanged: (v) => setState(() => _jurusan = v),
             ),
+            const SizedBox(height: 12),
+            // Menggunakan variabel _setuju
+            CheckboxListTile(
+              title: const Text('Saya menyetujui syarat & ketentuan'),
+              value: _setuju,
+              onChanged: (v) => setState(() => _setuju = v ?? false),
+              controlAffinity: ListTileControlAffinity.leading,
+              contentPadding: EdgeInsets.zero,
+            ),
+            const SizedBox(height: 16),
+            // Menggunakan fungsi _kirim (tombol aktif jika _setuju = true)
+            ElevatedButton(
+              onPressed: _setuju ? _kirim : null,
+              child: const Text('Simpan / Kirim'),
+            ),
           ],
         ),
       ),
